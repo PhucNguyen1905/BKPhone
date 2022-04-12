@@ -15,7 +15,7 @@ class App
             unset($arr[0]);
         }
         require_once "./mvc/controllers/" . $this->controller . ".php";
-        $this->controller = new $this->controller();
+        $this->controller = new $this->controller;
 
         // Xu li Action
         if (isset($arr[1])) {
