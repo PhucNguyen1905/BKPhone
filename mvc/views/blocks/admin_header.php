@@ -12,8 +12,7 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" />
     <!-- Custom css -->
-    <?php define('SCRIPT_ROOT', 'http://localhost/BKPhone'); ?>
-    <link rel="stylesheet" href="<?php echo SCRIPT_ROOT . '/public/css/admin_style.css'; ?>">
+    <link rel="stylesheet" href="public/css/admin_style.css">
 
 </head>
 
@@ -23,7 +22,7 @@
         <nav>
             <div class="siderbar-header">
                 <div class="brand">
-                    <img src="<?php echo SCRIPT_ROOT . '/public/images/logo.png'; ?>" alt="">
+                    <img src="public/images/logo.png" alt="">
                     <h2>BKStore</h2>
                 </div>
                 <div class="close" id="close-btn"><span class="material-icons-sharp">close</span></div>

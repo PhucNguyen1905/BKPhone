@@ -6,7 +6,7 @@ require_once('mvc/views/blocks/admin_header.php');
 <!-- MAIN SECTION -->
 <main>
     <h1>Phone Brand</h1>
-    <a href="http://localhost/BKPhone/AdminBrand/Add" class="addBtn">Add New Brand</a>
+    <a href="http://localhost/BKPhone/AdminAdd" class="addBtn">Add New Brand</a>
     <!-- Brand -->
     <div class="tablelist">
         <h2>Brand</h2>
@@ -26,7 +26,7 @@ require_once('mvc/views/blocks/admin_header.php');
                         <td><?php echo $i; ?></td>
                         <td><?php echo $item['name']; ?></td>
                         <td><a href="<?php echo 'http://localhost/BKPhone/AdminBrand/ViewEdit/' . $item['id']; ?>" class="warning">Edit</a></td>
-                        <td><a href="<?php echo 'http://localhost/BKPhone/AdminBrand/DeleteBrand/' . $item['id']; ?>" class="delLink" style="color: #ff7782;">Delete</a></td>
+                        <td><a href="<?php echo 'http://localhost/BKPhone/AdminBrand/DeleteBrand/' . $item['id']; ?>" style="color: #ff7782;">Delete</a></td>
                     </tr>
                 <?php $i = $i + 1;
                 } ?>
@@ -49,17 +49,6 @@ require_once('mvc/views/blocks/admin_header.php');
 <script>
     $(document).ready(function() {
         $('#orderList').DataTable();
-    });
-
-    jQuery(".delLink").on("click", function(e) {
-        e.preventDefault();
-        var clicked = jQuery(this);
-        var clicked_url = clicked.attr("href");
-
-        var msg = confirm("Are you sure you want to delete this brand?");
-        if (msg == true) {
-            window.location.href = clicked_url;
-        }
     });
 </script>
 <script src="public/js/index.js"></script>
