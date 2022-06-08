@@ -39,11 +39,11 @@ class ProductDetail extends Controller
     public function productDetail($id)
     {
         $productItem = $this->productModel->selectProduct($id);
-        echo json_encode($productItem);
+        // echo json_encode($productItem);
         if ($productItem == []) header("Location: http://localhost/BKPhone/ProductDetail/");
         $feedbacks = $this->productModel->getFeedback($id);
         $allProductRelated = $this->productModel->selectProductRelated($productItem[0]["category_id"]);
-        $this->view("product/product_detail", [
+        $this->view("product_detail", [
             "productItem" => $productItem[0],
             "allProductRelated" => $allProductRelated,
             "feedbacks" => $feedbacks
