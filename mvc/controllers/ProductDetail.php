@@ -31,17 +31,18 @@ class ProductDetail extends Controller
             $content = $_POST['content'];
             $this->productModel->pushFeedback($userid, $productid, $content);
         }
-        $url = "Location: http://localhost/BKPhone/ProductDetail/productDetail/" . (string)$id;
+        $url = "Location: http://localhost/BKPhone/ProductDetail/viewProduct/" . (string)$id;
         echo $url;
         header($url);
     }
 
-    public function productDetail($id)
+    public function viewProduct($id)
     {
         $productItem = $this->productModel->selectProduct($id);
-        // echo json_encode($productItem);
+
         if ($productItem == []) header("Location: http://localhost/BKPhone/ProductDetail/");
         $feedbacks = $this->productModel->getFeedback($id);
+        // echo json_encode($feedbacks);
         $allProductRelated = $this->productModel->selectProductRelated($productItem[0]["category_id"]);
         $this->view("product_detail", [
             "productItem" => $productItem[0],
