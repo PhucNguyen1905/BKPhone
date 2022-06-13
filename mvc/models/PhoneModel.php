@@ -30,7 +30,7 @@ class PhoneModel extends DB
     // For homepage
     public function GetNewestPhoneInEachBrand()
     {
-        $sql = "SELECT product.name, final_price, thumbnail, product.description FROM product GROUP BY category_id HAVING max(updated_at)";
+        $sql = "SELECT product.name,product.id, final_price, thumbnail, product.description FROM product GROUP BY category_id HAVING max(updated_at)";
         return $this->getData($sql);
     }
     // 
