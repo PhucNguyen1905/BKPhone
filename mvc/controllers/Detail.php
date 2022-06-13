@@ -40,7 +40,7 @@ class Detail extends Controller
     {
         $productItem = $this->productModel->selectProduct($id);
 
-        if ($productItem == []) header("Location: http://localhost/BKPhone/ProductDetail/");
+        if ($productItem == []) header("Location: http://localhost/BKPhone/Detail/");
         $feedbacks = $this->productModel->getFeedback($id);
         // echo json_encode($feedbacks);
         $allProductRelated = $this->productModel->selectProductRelated($productItem[0]["category_id"]);

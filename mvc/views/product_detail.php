@@ -263,10 +263,10 @@
     <br>
     <br>
     <div class="small-container">
-        <h2 class="title">Comments about product</h2>
+        <h2 class="title">Bình luận về sản phẩm</h2>
         <form id="feedbackForm"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
-            action="/BKPhone/ProductDetail/pushFeedback/<?= $data['productItem']['id'] ?>" method="post">
+            action="/BKPhone/Detail/pushFeedback/<?= $data['productItem']['id'] ?>" method="post">
             <input type='hidden' name='userid' value='1' />
             <input type='hidden' name='productid' value="<?= $data['productItem']['id'] ?>" />
             <div class='form-group pb-2'>
