@@ -31,7 +31,7 @@ class Detail extends Controller
             $content = $_POST['content'];
             $this->productModel->pushFeedback($userid, $productid, $content);
         }
-        $url = "Location: http://localhost/BKPhone/ProductDetail/viewProduct/" . (string)$id;
+        $url = "Location: http://localhost/BKPhone/Detail/p/" . (string)$id;
         echo $url;
         header($url);
     }
