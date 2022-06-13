@@ -88,7 +88,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $data["productItem"]["name"] ?></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $data["productItem"]["namec"] ?></li>
                     </ol>
                 </nav>
                 <div class="price"><?= number_format($data["productItem"]["final_price"], 0, ',', '.') ?> VND</div>
@@ -241,7 +241,7 @@
         <div class="row">
             <?php $i = 1;
             foreach ($data['allProductRelated'] as $item) { ?>
-            <a href="/BKPhone/ProductDetail/viewProduct/<?= $item["id"] ?>" class="ra">
+            <a href="/BKPhone/Detail/p/<?= $item["id"] ?>" class="ra">
                 <div class="col-4">
                     <img src="<?= $item["thumbnail"] ?>" alt="">
                     <h4><?= $item["name"] ?></h4>

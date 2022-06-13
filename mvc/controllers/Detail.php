@@ -1,6 +1,6 @@
 <?php
 
-class ProductDetail extends Controller
+class Detail extends Controller
 {
 
     public $productModel;
@@ -36,7 +36,7 @@ class ProductDetail extends Controller
         header($url);
     }
 
-    public function viewProduct($id)
+    public function p($id)
     {
         $productItem = $this->productModel->selectProduct($id);
 

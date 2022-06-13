@@ -43,7 +43,7 @@ class PhoneModel extends DB
     public function selectProduct($id)
     {
         // $sql = "select * from product, category where id = '$id' and product.category_id = category.id";
-        $sql = "select `product`.* from `product`,`category` where `product`.`id` = '$id' and `product`.`category_id` = `category`.`id`";
+        $sql = "select `product`.* , `category`.`name` as namec from `product`,`category` where `product`.`id` = '$id' and `product`.`category_id` = `category`.`id`";
         return $this->getData($sql);
     }
 
