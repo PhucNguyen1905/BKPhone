@@ -1,3 +1,11 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 14, 2022 lúc 06:49 PM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +45,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (12, 'Sony');
 
 -- --------------------------------------------------------
+
 --
 -- Cấu trúc bảng cho bảng `feedback`
 --
@@ -47,10 +56,10 @@ CREATE TABLE `feedback` (
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- ---------------------------------------------------------
+-- --------------------------------------------------------
+
 --
 -- Cấu trúc bảng cho bảng `orders`
 --
@@ -136,6 +145,25 @@ INSERT INTO `product` (`id`, `category_id`, `name`, `base_price`, `final_price`,
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `user_id` int(11) NOT NULL,
+  `token` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tokens`
+--
+
+INSERT INTO `tokens` (`user_id`, `token`, `created_at`) VALUES
+(2, '6dc1aeec4754ddb9e578bf84ef909e85', '2022-06-14 18:49:21');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `user`
 --
 
@@ -151,6 +179,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `deleted`) VALUES
+(1, 'Phuc Nguyen', 'admin@gmail.com', '0388542487', 'Vĩnh Long', 'e10adc3949ba59abbe56e057f20f883e', 1, 0),
+(2, 'Test', 'test@test.com', '0123456789', 'Vĩnh Long', 'e10adc3949ba59abbe56e057f20f883e', 1, 0);
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -158,12 +194,6 @@ CREATE TABLE `user` (
 -- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `feedback`
---
-ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -212,12 +242,6 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
@@ -245,7 +269,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

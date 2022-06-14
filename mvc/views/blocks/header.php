@@ -1,3 +1,25 @@
+<?php
+require_once('mvc/core/Helper.php');
+
+$user = getUserToken();
+if ($user != null) {
+    $personLink = 'http://localhost/BKPhone/Home/EditProfle';
+    $fullname = 'Chào ' . $user["fullname"];
+} else {
+    $personLink = 'http://localhost/BKPhone/Login';
+    $fullname = "Đăng nhập";
+}
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$count = 0;
+foreach ($cart as $item) {
+    $count += $item['num'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand my-2 my-md-1" href="/BKPhone/home">
-                <p class="h2 mb-0 fw-bold text-warning">Điện Thoại WP</p>
+                <p class="h2 mb-0 fw-bold text-warning">BKPhone</p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,7 +57,7 @@
                         <a class="nav-link text-warning fw-bold <?php echo $activeNav == "products" ? "nav-link-active" : "" ?>" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
                                 <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
-                            </svg>Danh sách mặt hàng
+                            </svg>Sản phẩm
                         </a>
                     </li>
                     <li class="nav-item m-1">
@@ -45,9 +67,10 @@
                         </a>
                     </li>
                     <li class="nav-item m-1 <?php echo $activeNav == "personal" ? "nav-link-active" : "" ?>">
-                        <a class="nav-link text-warning fw-bold" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+
+                        <a class="nav-link text-warning fw-bold" href="<?php echo $personLink; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg>Trang cá nhân
+                            </svg><?php echo $fullname; ?>
                         </a>
                     </li>
                 </ul>
