@@ -70,7 +70,6 @@ class PhoneModel extends DB
                     ORDER BY product.final_price DESC";
         return $this->getData($sql);
     }
-}
     // For homepage
     public function GetNewestPhoneInEachBrand()
     {
