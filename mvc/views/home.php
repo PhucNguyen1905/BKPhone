@@ -1,7 +1,7 @@
 <?php
-$title = 'Homepage';
+$title = 'Home';
 $activeNav = 'home';
-require_once('mvc/views/blocks/nav_bar.php');
+require_once('mvc/views/blocks/header.php');
 ?>
 
 <header id="header" class="page-header gradient">
@@ -115,10 +115,11 @@ require_once('mvc/views/blocks/nav_bar.php');
                                     <img src="<?php echo $item['thumbnail'] ?>" class="card-img-top" alt="product image">
                                     <div class="card-body">
                                         <h5 class="card-title text-white fw-bold overflow-hidden w-100" style="line-height: 1.5em; height: 3em;"><?php echo $item['name'] ?></h5>
-                                        <p class="price mb-0"><?php echo number_format($item['final_price'], 0, '', '.') . ' VNĐ' ?></p>
+                                        <p class="price mb-0">
+                                            <?php echo number_format($item['final_price'], 0, ',', '.') . ' VNĐ' ?></p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="/BKPhone/#" class="btn btn-outline-warning">Mua ngay</a>
+                                        <a href="<?php echo '/BKPhone/Detail/p/' . $item['id']; ?>" class="btn btn-outline-warning">Mua ngay</a>
                                     </div>
                                 </div>
                             </div>

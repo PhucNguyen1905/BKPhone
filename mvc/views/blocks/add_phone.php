@@ -1,6 +1,5 @@
-<h1>Phone Management</h1>
-<a href="http://localhost/BKPhone/AdminPhone" class="addBtn">Back to Phone list</a>
-<h2 class="mt-3">Add New Phone</h2>
+<h3 class="fs-4 mb-3">Add New Phone</h3>
+<a href="http://localhost/BKPhone/AdminPhone" class="btn btn-outline-primary">Back to Phone list</a>
 <form class="addForm" action="http://localhost/BKPhone/AdminPhone/NewPhone" method="POST">
     <div class="form-group mt-2 mb-2">
         <label for="">Brand</label>

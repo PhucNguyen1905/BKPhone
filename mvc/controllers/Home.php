@@ -8,7 +8,6 @@ class Home extends Controller
     {
         $this->dbBrand = $this->model('BrandModel');
         $this->dbPhone = $this->model('PhoneModel');
-        $this->allBrand = $this->dbBrand->GetBrandList();
     }
     public function GetPage()
     {
@@ -16,8 +15,4 @@ class Home extends Controller
         $lastPhones = $this->dbPhone->GetNewestPhoneInEachBrand();
         $this->view("home", ['brands' => $brands, 'phones' => $lastPhones]);
     }
-    
-
-    
-
 }
