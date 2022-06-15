@@ -9,6 +9,7 @@ class Products extends Controller
         $this->allBrand = $this->brandModel->GetBrandList();
         $this->phoneModel = $this->model("PhoneModel");
     }
+
     public function getPage($category_id = 0, $page = 1, $filter=1){
         if($category_id == 0){
             for($i=0;$i<count($this->allBrand);$i++){
@@ -43,5 +44,17 @@ class Products extends Controller
                 "filter"=>$filter
             ]);
         }
+    }
+    
+    public function card($id = 1){
+        $this->view("components/card");
+    }
+
+    public function checkout($id = 1){
+        $this->view("components/checkout");
+    }
+
+    public function paymentOnline($id = 1){
+        $this->view("components/paymentOnline");
     }
 }

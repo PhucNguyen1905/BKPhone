@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    
+<!-- index28:48-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>PhoneStore</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="http://localhost/BKPhone/public/images/favicon.png">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="http://localhost/BKPhone/public/css/style.css">
+        <!-- Modernizr js -->
+        <link href="http://localhost/BKPhone/public/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+<body>
 <!-- Begin Breadcrumb -->
 <nav id="nav-breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -75,23 +96,23 @@
         <div class="container-fluid">
                 <div class="row">
                 <div class="m-auto">
-                    <div class="owl-carousel owl-theme">
+                    <div class="row d-flex justify-content-center">
         <?php
             for($i=$data["currentIndex"];$i<$data["currentIndex"]+12 && $i<$countProduct;$i++){
+                echo    '<div class="col-md-3 col-sm-6 col-12">';
                 echo    '<div style="margin-bottom:10px" class="card">';
                 echo        '<a href="http://localhost/BKPhone/productDetail/'.$data["allProductBrand"][$i]["id"].'">
                                 <img class="card-img-top mt-2"
                                     src="'.$data["allProductBrand"][$i]["thumbnail"].'"
                                     alt="Card image cap">
                             </a>';
-                echo        '<div class="card-body">';
+                echo        '<div class="card-body text-center">';
                 echo            '<a id="taga" href="http://localhost/BKPhone/productDetail/'.$data["allProductBrand"][$i]["id"].'"><h5 class="card-title">'.$data["allProductBrand"][$i]["name"].'</h5></a>
                                 <hr />';
                 echo            '<span class="card-text">'.number_format($data["allProductBrand"][$i]["final_price"]).'đ</span>';
-                echo            '<span style="margin-left:12px; text-decoration: line-through;" class="card-text">'; if($data["allProductBrand"][$i]["discount"] != 0) echo number_format($data["allProductBrand"][$i]["best_price"]).'đ'; echo '</span>';
                 echo        '</div>';
                 echo        '<button type="button" class="btnOrder btn btn-danger" onclick="addToCard('.$data["allProductBrand"][$i]["id"].')">Đặt hàng</button>';
-                echo    '</div>';
+                echo    '</div></div>';
 
             }
                 
@@ -100,8 +121,6 @@
                       
                 ?>
                  
-           
-        ?>
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination pg-blue justify-content-center">
@@ -149,3 +168,4 @@
         });
     }
 </script>
+</body>
