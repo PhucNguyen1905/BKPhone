@@ -17,11 +17,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
                 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    
 <!--Section: Block Content-->
 <nav id="nav-breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="ml125 breadcrumb-item"><a href="http://localhost/BKPhone/Home">Trang chủ</a></li>
+            <li class="ml125 breadcrumb-item"><a href="http://localhost/Laptrinhweb/Home">Trang chủ</a></li>
             <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
         </ol>
     </nav>
@@ -45,7 +44,7 @@
                 <div class="row mb-4">
                   <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                       <a href="http://localhost/Phone/Home/productDetail/'.$data["orderDetails"][$i]["id"].'">
+                       <a href="http://localhost/Laptrinhweb/Home/productDetail/'.$data["orderDetails"][$i]["id"].'">
                         <div class="mask">
                           <img class="img-fluid w-100"
                             src="'.$data["orderDetails"][$i]["thumbnail"].'">

@@ -49,24 +49,20 @@ class PhoneModel extends DB
         if($filter == 2){
             $sql = "select product.*, category.name as category_name 
                     from product left join category on product.category_id = category.id 
-                    where product.deleted = 0
                     ORDER BY product.final_price ASC";
         }
         else if($filter == 3){
             $sql = "select product.*, category.name as category_name 
                     from product left join category on product.category_id = category.id 
-                    where product.deleted = 0
                     ORDER BY product.name ASC";
         }
         else if($filter == 4){
             $sql = "select product.*, category.name as category_name 
                     from product left join category on product.category_id = category.id 
-                    where product.deleted = 0
                     ORDER BY product.name DESC";
         }
         else $sql = "select product.*, category.name as category_name 
                     from product left join category on product.category_id = category.id 
-                    where product.deleted = 0
                     ORDER BY product.final_price DESC";
         return $this->getData($sql);
     }

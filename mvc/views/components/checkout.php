@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    
+<!-- index28:48-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>PhoneStore</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="http://localhost/BKPhone/public/images/favicon.png">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="http://localhost/BKPhone/public/css/style.css">
+        <!-- Modernizr js -->
+        <link href="http://localhost/BKPhone/public/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
 <!--Section: Block Content-->
 <nav id="nav-breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb">
