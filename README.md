@@ -2,7 +2,7 @@
 
 Frontend: HTML, CSS, JavaScript + Bootstrap 5
 
-Backend: NodeJs, Express 
+Backend: PHP
 
 Database: MySQL
 
