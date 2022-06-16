@@ -11,15 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <?php define('SCRIPT_ROOT', 'http://localhost/BKPhone'); ?>
     <link rel="stylesheet" href="<?php echo SCRIPT_ROOT . '/public/css/product_detail_style.css'; ?>">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -151,8 +148,7 @@
                         <span class="subcart">(Xét duyệt nhanh chóng qua điện thoại)</span>
                     </span>
                 </button>
-                <button type="submit" class="add-to-cart button alt"
-                    style="background: #007eaf; width: 49%; margin-left: 2%;">
+                <button type="submit" class="add-to-cart button alt" style="background: #007eaf; width: 49%; margin-left: 2%;">
                     <span>
                         Trả góp qua thẻ
                         <span class="subcart">(Visa, Thẻ ngân hàng, Momo,...)</span>
@@ -173,13 +169,11 @@
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>118 Thái
                                 hà, Hà Nội <span style="color: red;">09.7673.2468</span></li>
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>312
-                                Nguyễn Trãi, Trung Văn, Nam Từ Liêm, Hà Nội – Gần chợ Phùng Khoang <span
-                                    style="color: red;">09.7673.2468</span></li>
+                                Nguyễn Trãi, Trung Văn, Nam Từ Liêm, Hà Nội – Gần chợ Phùng Khoang <span style="color: red;">09.7673.2468</span></li>
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>380 Trần
                                 Phú, TP.Thanh Hóa</li>
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>107
-                                Nguyễn Hữu Tiến – TT Đồng Văn – Duy Tiên – Hà Nam <span
-                                    style="color: red;">09.7673.2468</span></li>
+                                Nguyễn Hữu Tiến – TT Đồng Văn – Duy Tiên – Hà Nam <span style="color: red;">09.7673.2468</span></li>
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>82 Lạch
                                 Tray, Hải Phòng <span style="color: red;">09.7673.2468</span></li>
                             <li><i class="fa-solid fa-location-dot" style="color: rgba(20, 136, 219, 255)"></i>Viet Nam
@@ -213,8 +207,7 @@
 
                         </div>
                         <div class="register-phone-body" style="position: relative;">
-                            <input type="text" maxlength="10" class="form-control"
-                                placeholder="Tư vấn qua số điện thoại">
+                            <input type="text" maxlength="10" class="form-control" placeholder="Tư vấn qua số điện thoại">
                             <button type="button">Gửi</button>
                         </div>
                     </div>
@@ -222,10 +215,8 @@
                 </div>
                 <div class="shop-contact">
                     <ul>
-                        <li><i class="fa-solid fa-phone" style="color: red;"></i> Gọi <span
-                                style="color: red;">0858114558</span> để được tư vấn (Từ 8:00-21:00)</li>
-                        <li><i class="fa-solid fa-phone" style="color: red;"></i> Gọi <span
-                                style="color: red;">0858114558</span> để được tư vấn (Từ 8:00-21:00)</li>
+                        <li><i class="fa-solid fa-phone" style="color: red;"></i> Gọi <span style="color: red;">0858114558</span> để được tư vấn (Từ 8:00-21:00)</li>
+                        <li><i class="fa-solid fa-phone" style="color: red;"></i> Gọi <span style="color: red;">0858114558</span> để được tư vấn (Từ 8:00-21:00)</li>
                     </ul>
                 </div>
             </div>
@@ -241,18 +232,18 @@
         <div class="row">
             <?php $i = 1;
             foreach ($data['allProductRelated'] as $item) { ?>
-            <a href="/BKPhone/Detail/p/<?= $item["id"] ?>" class="ra">
-                <div class="col-4">
-                    <img src="<?= $item["thumbnail"] ?>" alt="">
-                    <h4><?= $item["name"] ?></h4>
-                    <p><?= number_format($item["final_price"], 0, ',', '.') ?> VND</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-            </a>
+                <a href="/BKPhone/Detail/p/<?= $item["id"] ?>" class="ra">
+                    <div class="col-4">
+                        <img src="<?= $item["thumbnail"] ?>" alt="">
+                        <h4><?= $item["name"] ?></h4>
+                        <p><?= number_format($item["final_price"], 0, ',', '.') ?> VND</p>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                </a>
             <?php $i = $i + 1;
             } ?>
 
@@ -264,14 +255,11 @@
     <br>
     <div class="small-container">
         <h2 class="title">Bình luận về sản phẩm</h2>
-        <form id="feedbackForm"
-            style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
-            action="/BKPhone/Detail/pushFeedback/<?= $data['productItem']['id'] ?>" method="post">
+        <form id="feedbackForm" style="display: flex; flex-direction: column; justify-content: center; align-items: center;" action="/BKPhone/Detail/pushFeedback/<?= $data['productItem']['id'] ?>" method="post">
             <input type='hidden' name='userid' value='1' />
             <input type='hidden' name='productid' value="<?= $data['productItem']['id'] ?>" />
             <div class='form-group pb-2'>
-                <textarea class='form-control' style="font-size: 18px!important; height: 120px; width: 500px;"
-                    name='content' placeholder='Gõ bình luận ở đây'></textarea>
+                <textarea class='form-control' style="font-size: 18px!important; height: 120px; width: 500px;" name='content' placeholder='Gõ bình luận ở đây'></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Đăng bình luận</button>
         </form>
@@ -291,37 +279,36 @@
                         <?php $i = 1;
                         // echo json_encode($data['feedbacks']);
                         foreach ($data['feedbacks'] as $item) { ?>
-                        <div class="testimonial-box">
-                            <!--top------------------------->
-                            <div class="box-top">
-                                <!--profile----->
-                                <div class="profile">
-                                    <!--img---->
-                                    <div class="profile-img">
-                                        <img
-                                            src="https://thuvienplus.com/themes/cynoebook/public/images/default-user-image.png" />
+                            <div class="testimonial-box">
+                                <!--top------------------------->
+                                <div class="box-top">
+                                    <!--profile----->
+                                    <div class="profile">
+                                        <!--img---->
+                                        <div class="profile-img">
+                                            <img src="https://thuvienplus.com/themes/cynoebook/public/images/default-user-image.png" />
+                                        </div>
+                                        <!--name-and-username-->
+                                        <div class="name-user">
+                                            <strong><?= $item["fullname"] ?></strong>
+                                            <span><?= $item["email"] ?></span>
+                                        </div>
                                     </div>
-                                    <!--name-and-username-->
-                                    <div class="name-user">
-                                        <strong><?= $item["fullname"] ?></strong>
-                                        <span><?= $item["email"] ?></span>
+                                    <!--reviews------>
+                                    <div class="reviews">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <!--Empty star-->
                                     </div>
                                 </div>
-                                <!--reviews------>
-                                <div class="reviews">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <!--Empty star-->
+                                <!--Comments---------------------------------------->
+                                <div class="client-comment">
+                                    <p><?= $item["content"] ?></p>
                                 </div>
                             </div>
-                            <!--Comments---------------------------------------->
-                            <div class="client-comment">
-                                <p><?= $item["content"] ?></p>
-                            </div>
-                        </div>
 
                         <?php $i = $i + 1;
                         } ?>
@@ -343,24 +330,23 @@
 
 
     <script>
-    var productImg = document.getElementById('product-img');
-    var smallImg = document.getElementsByClassName('small-img');
+        var productImg = document.getElementById('product-img');
+        var smallImg = document.getElementsByClassName('small-img');
 
-    smallImg[0].onclick = () => {
-        productImg.src = smallImg[0].src
-    }
-    smallImg[1].onclick = () => {
-        productImg.src = smallImg[1].src
-    }
-    smallImg[2].onclick = () => {
-        productImg.src = smallImg[2].src
-    }
-    smallImg[3].onclick = () => {
-        productImg.src = smallImg[3].src
-    }
+        smallImg[0].onclick = () => {
+            productImg.src = smallImg[0].src
+        }
+        smallImg[1].onclick = () => {
+            productImg.src = smallImg[1].src
+        }
+        smallImg[2].onclick = () => {
+            productImg.src = smallImg[2].src
+        }
+        smallImg[3].onclick = () => {
+            productImg.src = smallImg[3].src
+        }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 </body>
 
