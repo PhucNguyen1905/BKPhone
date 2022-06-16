@@ -50,6 +50,13 @@ require_once('mvc/views/blocks/header.php');
                     <?php } ?>
                 </ul>
             </div>
+            <div class="row mt-5 justify-content-end">
+                <div class="col-md-2">
+                    <a href="/BKPhone/aboutUs" class="btn btn-outline-dark fw-bold">
+                        Về chúng tôi
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -144,7 +151,7 @@ require_once('mvc/views/blocks/header.php');
         </path>
     </svg>
     <div class="container">
-        <p class="h1 text-decoration-underline fw-bold">About Us</p>
+        <a href="/BKPhone/aboutUs" class="h1 text-decoration-underline fw-bold">About Us</a>
         <p class="fs-3">Nhóm Sinh Viên Đại Học Bách Khoa TP.HCM</p>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 210">

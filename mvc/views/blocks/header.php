@@ -29,7 +29,7 @@ foreach ($cart as $item) {
     <title><?php echo $title ?></title>
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="public/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="public/css/home.css" />
+    <link rel="stylesheet" href="public/css/<?php echo $activeNav ?>.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
 </head>
@@ -54,6 +54,13 @@ foreach ($cart as $item) {
                         </a>
                     </li>
                     <li class="nav-item m-1">
+                        <a class="nav-link text-warning fw-bold <?php echo $activeNav == "aboutUs" ? "nav-link-active" : "" ?>" href="/BKPhone/aboutUs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>Về chúng tôi
+                        </a>
+                    </li>
+                    <li class="nav-item m-1">
                         <a class="nav-link text-warning fw-bold <?php echo $activeNav == "products" ? "nav-link-active" : "" ?>" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
                                 <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
@@ -67,7 +74,6 @@ foreach ($cart as $item) {
                         </a>
                     </li>
                     <li class="nav-item m-1 <?php echo $activeNav == "personal" ? "nav-link-active" : "" ?>">
-
                         <a class="nav-link text-warning fw-bold" href="<?php echo $personLink; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                             </svg><?php echo $fullname; ?>
