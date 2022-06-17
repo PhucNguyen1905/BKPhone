@@ -14,10 +14,6 @@
                 <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
 
                 <p class="foot-desc mb-0">Đội ngũ phát triển gồm 5 thành viên</p>
-                <p class="foot-desc mb-0">Nguyễn Tấn Lộc</p>
-                <p class="foot-desc mb-0">Nguyễn Danh Tiến Dũng </p>
-                <p class="foot-desc mb-0">Hà Minh Đức </p>
-                <p class="foot-desc mb-0">Trần Lê Công Minh </p>
                 <p class="foot-desc mb-0">Nguyễn Trọng Phúc </p>
 
             </div>
@@ -89,8 +85,8 @@
                 <ul class="fa-ul foot-desc ml-4">
                     <li class="mb-2"><span class="fa-li"><i class="far fa-map"></i></span>Đại học Bách Khoa TPHCM
                     </li>
-                    <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span>034 765 1292</li>
-                    <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>loc.nguyencse@gmail.com
+                    <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span>0123 456 789</li>
+                    <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>ngtrongphuc1905@gmail.com
                     </li>
                     <li><span class="fa-li"><i class="far fa-clock"></i></span>Làm việc 24/7</li>
                 </ul>
