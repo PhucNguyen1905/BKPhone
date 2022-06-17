@@ -19,7 +19,12 @@ class CategoryAdmin extends Controller
         ]);
     }
 
-    public function insertCategoryController()
+    public function Add()
+    {
+        $this->view("category/add", []);
+    }
+
+    public function PostAddCategory()
     {
         if (isset($_POST)) {
             $name = getPost("name");
@@ -38,7 +43,7 @@ class CategoryAdmin extends Controller
         ]);
     }
 
-    public function doupdateCategoryController()
+    public function postEditCategory()
     {
         if (isset($_POST)) {
             $id = getPost('id');

@@ -1,10 +1,10 @@
 <?php
-	$title = 'Dashboard Page';
-	$isActive = "Dashboard";
-	require_once "mvc/utility/utility.php";
-	require_once('blocks/header_admin.php');
-    for($i=0;$i<12;$i++)
-        echo '<p class="d-none" id="m'.$data["doanhthu"][$i]["MONTH(created_at)"].'">'.$data["doanhthu"][$i]["SUM(total_money)"].'<p>';
+$title = 'Dashboard Page';
+$activeNav = "analytic";
+require_once "mvc/utility/utility.php";
+require_once('blocks/header_admin.php');
+for ($i = 0; $i < 12; $i++)
+    echo '<p class="d-none" id="m' . $data["doanhthu"][$i]["MONTH(created_at)"] . '">' . $data["doanhthu"][$i]["SUM(total_money)"] . '<p>';
 ?>
 
 <div class="row">
@@ -104,5 +104,5 @@
     });
 </script>
 <?php
-	require_once('blocks/footer_admin.php');
+require_once('blocks/footer_admin.php');
 ?>

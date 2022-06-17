@@ -1,6 +1,8 @@
       <!-- END -->
       </main>
-  </div>
-</div>
-</body>
-</html>
+      </div>
+      </div>
+      <script src="public/js/admin_index.js"></script>
+      </body>
+
+      </html>

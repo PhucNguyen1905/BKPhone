@@ -1,6 +1,6 @@
 <?php
 $title = 'Quản Lý Đơn Hàng';
-$isActive = "OrderAdmin";
+$activeNav = "order";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
 

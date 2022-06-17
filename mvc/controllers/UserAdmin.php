@@ -56,6 +56,7 @@ class UserAdmin extends Controller
 
     public function viewInsertUser()
     {
+        $id = 0;
         $userItem = $this->userModel->selectUser($id);
         $role = $this->userModel->getRole();
         $this->view("user/addUser", [

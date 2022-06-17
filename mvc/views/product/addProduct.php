@@ -1,6 +1,6 @@
 <?php
 $title = 'Thêm/Sửa Sản Phẩm';
-$isActive = "ProductAdmin";
+$activeNav = "phone";
 require_once('mvc/views/blocks/header_admin.php');
 
 ?>
@@ -10,18 +10,19 @@ require_once('mvc/views/blocks/header_admin.php');
 
 <div class="row" style="margin-top: 20px;">
     <div class="col-md-12 table-responsive">
-        <h3>Thêm Sản Phẩm</h3>
+        <h3>Add new phone</h3>
+        <a href="http://localhost/BKPhone/ProductAdmin" class="btn btn-outline-primary">Back to Phone list</a>
         <div class="panel panel-primary">
             <div class="panel-body">
                 <form method="post" enctype="multipart/form-data" action="http://localhost/BKPhone/ProductAdmin/insertProductController">
                     <div class="row">
                         <div class="col-md-9 col-12">
                             <div class="form-group">
-                                <label for="usr">Tên Sản Phẩm:</label>
+                                <label for="usr">Name:</label>
                                 <input required="true" type="text" class="form-control" id="usr" name="title">
                             </div>
                             <div class="form-group">
-                                <label for="pwd">Nội Dung:</label>
+                                <label for="pwd">Description:</label>
                                 <textarea class="form-control" rows="5" name="description" id="description"></textarea>
                             </div>
                             <div class="form-group">
@@ -30,9 +31,9 @@ require_once('mvc/views/blocks/header_admin.php');
                                 <img id="thumbnail_img" src="" style="max-height: 160px; margin-top: 5px; margin-bottom: 15px;">
                             </div>
                             <div class="form-group">
-                                <label for="usr">Danh Mục Sản Phẩm:</label>
+                                <label for="usr">Category:</label>
                                 <select class="form-control" name="category_id" id="category_id" required="true">
-                                    <option value="">-- Chọn --</option>
+                                    <option value="">-- Select --</option>
                                     <?php
                                     $countCategory = count($data["category"]);
                                     for ($i = 0; $i < $countCategory; $i++) {
@@ -42,14 +43,14 @@ require_once('mvc/views/blocks/header_admin.php');
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="price">Giá:</label>
+                                <label for="price">Base Price:</label>
                                 <input required="true" type="number" class="form-control" id="price" name="price">
                             </div>
                             <div class="form-group">
-                                <label for="discount">Giảm Giá:</label>
+                                <label for="discount">Discount:</label>
                                 <input type="text" class="form-control" id="discount" name="discount">
                             </div>
-                            <button class="btn btn-success">Lưu Sản Phẩm</button>
+                            <button class="btn btn-success">Add</button>
                         </div>
 
                     </div>

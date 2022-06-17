@@ -8,19 +8,25 @@ if ($user != null) {
 } else header('Location: http://localhost/BKPhone/Home');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $title ?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- <link rel="icon" type="image/png" href="https://gokisoft.com/uploads/2021/03/s-568-ico-web.jpg" /> -->
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-  <link rel="stylesheet" type="text/css" href="http://localhost/BKPhone/public/css/dashboard.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!-- Material Icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" />
+  <!-- Custom css -->
+  <?php define('SCRIPT_ROOT', 'http://localhost/BKPhone'); ?>
+  <link rel="stylesheet" href="<?php echo SCRIPT_ROOT . '/public/css/admin_style.css'; ?>">
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,91 +41,63 @@ if ($user != null) {
 
 </head>
 
+
 <body>
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://localhost/BKPhone/Home">PhoneStore</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Tìm kiếm" aria-label="Search">
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="http://localhost/BKPhone/Home">Thoát</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link 
-            <?php if (isset($isActive)) {
-              if ($isActive == 'Dashboard')
-                echo 'active';
-              else echo '';
-            }
-            ?>" href="http://localhost/BKPhone/Admin">
-                <i class="bi bi-house-fill"></i>
-                Dashboard
+  <div class="d-flex" id="wrapper">
+    <!-- ===========SIDE BAR============ -->
+    <div class="bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+        <img src="<?php echo SCRIPT_ROOT . '/public/images/logo.png'; ?>" alt=""> BKPhone
+      </div>
+      <div class="list-group list-group-flush my-3">
+        <a href="http://localhost/BKPhone/OrderAdmin" class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
+          <span class="material-icons-sharp me-2">receipt_long</span>Order
+        </a>
+        <a href="http://localhost/BKPhone/CategoryAdmin" class="<?php echo $activeNav == 'category' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">format_list_bulleted</span>Category
+        </a>
+        <a href="http://localhost/BKPhone/ProductAdmin" class="<?php echo $activeNav == 'phone' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">smartphone</span>Phone
+        </a>
+        <a href="http://localhost/BKPhone/UserAdmin" class="<?php echo $activeNav == 'user' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">person_outline</span>User
+        </a>
+        <a href="http://localhost/BKPhone/Admin" class="<?php echo $activeNav == 'analytic' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">insights</span>Analytics
+        </a>
+        <a href="http://localhost/BKPhone/Login/UserLogout" class="list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">logout</span>Logout
+        </a>
+
+      </div>
+    </div>
+    <!-- ===========SIDE BAR============ -->
+    <!-- ===========Page Content============ -->
+    <div id="page-content-wrapper">
+      <!-- ===========NavBar============ -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+          <h2 class="fs-2 m-0">Dashboard</h2>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user me-2"></i>Phuc Nguyen
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php if (isset($isActive)) {
-                                    if ($isActive == 'CategoryAdmin')
-                                      echo 'active';
-                                    else echo '';
-                                  }
-                                  ?>" href="http://localhost/BKPhone/CategoryAdmin">
-                <i class="bi bi-folder"></i>
-                Danh Mục Sản Phẩm
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php if (isset($isActive)) {
-                                    if ($isActive == 'ProductAdmin')
-                                      echo 'active';
-                                    else echo '';
-                                  }
-                                  ?>" href="http://localhost/BKPhone/ProductAdmin">
-                <i class="bi bi-file-earmark-text"></i>
-                Sản Phẩm
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php if (isset($isActive)) {
-                                    if ($isActive == 'OrderAdmin')
-                                      echo 'active';
-                                    else echo '';
-                                  }
-                                  ?>" href="http://localhost/BKPhone/OrderAdmin">
-                <i class="bi bi-minecart"></i>
-                Quản Lý Đơn Hàng
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php if (isset($isActive)) {
-                                    if ($isActive == 'FeedbackAdmin')
-                                      echo 'active';
-                                    else echo '';
-                                  }
-                                  ?>" href="http://localhost/BKPhone/FeedbackAdmin">
-                <i class="bi bi-question-circle-fill"></i>
-                Quản Lý Phản Hồi
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php if (isset($isActive)) {
-                                    if ($isActive == 'UserAdmin')
-                                      echo 'active';
-                                    else echo '';
-                                  }
-                                  ?>" href="http://localhost/BKPhone/UserAdmin">
-                <i class="bi bi-people-fill"></i>
-                Quản Lý Người Dùng
-              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
             </li>
           </ul>
         </div>
       </nav>
-
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <!-- hien thi tung chuc nang cua trang quan tri START-->
+      <!-- ===========NavBar============ -->
