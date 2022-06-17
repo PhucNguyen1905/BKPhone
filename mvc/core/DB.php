@@ -1,44 +1,42 @@
 <?php
 require_once "config.php";
-class DB
-{
-    public $con;
+class DB {
+    // SQL: insert, update, delete
+    function execute($sql) {
+        //open connection
+        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+        mysqli_set_charset($conn, 'utf8');
 
-    function __construct()
-    {
-        // Open connection
-        $this->con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-        mysqli_set_charset($this->con, 'utf8');
+        //query
+        mysqli_query($conn, $sql);
+
+        //close connection
+        mysqli_close($conn);
     }
 
-    // For insert, delete, update statements
-    function modifyData($sql)
-    {
-        mysqli_query($this->con, $sql);
-    }
-
-    // For select statements
-    function getData($sql, $oneRecord = false)
-    {
+    // SQL: select -> lay du lieu dau ra (select danh sach ban ghi, lay 1 ban ghi)
+    function executeResult($sql, $isSingle = false) {
         $data = null;
 
-        $results = mysqli_query($this->con, $sql);
-        if ($results) {
-            if ($oneRecord) {
-                $data = mysqli_fetch_array($results, 1);
+        //open connection
+        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+        mysqli_set_charset($conn, 'utf8');
+
+        //query
+        $resultset = mysqli_query($conn, $sql);
+        if($resultset){
+            if($isSingle) {
+                $data = mysqli_fetch_array($resultset, 1);
             } else {
                 $data = [];
-                while (($row = mysqli_fetch_array($results, 1)) != null) {
+                while(($row = mysqli_fetch_array($resultset, 1)) != null) {
                     $data[] = $row;
                 }
             }
+            //close connection
+            mysqli_close($conn);
         }
         return $data;
     }
-
-    function __destruct()
-    {
-        // Close connection
-        mysqli_close($this->con);
-    }
 }
+

@@ -1,50 +1,54 @@
 <?php
-require_once('mvc/core/Helper.php');
+require_once "mvc/utility/utility.php";
+
 class Login extends Controller
 {
-    public $db = null;
+
+    public $UserModel;
+
     public function __construct()
     {
-        $this->db = $this->model('UserModel');
+        $this->UserModel = $this->model("UserModel");
     }
+
     public function GetPage()
     {
         $this->view("login", []);
     }
 
-    public function PostLogin()
+    public function UserLogin()
     {
 
         if (isset($_POST["btnLogin"])) {
             // get data
-            $email = getPostData('email');
-            $password = getPostData('password');
-            $password = md5($password);
+            $email = getPost('email');
+            $password = getPost('password');
+            $password = getSecurityMD5($password);
 
 
-            $result = $this->db->authenUser($email, $password);
+            $kq = $this->UserModel->XacNhanTaiKhoan($email, $password);
 
             // show home
 
-            if ($result["result"]) {
-                if ($result["role_id"] == 1) {
+            if ($kq["result"]) {
+                if ($kq["role_id"] == 1) {
                     header('Location: http://localhost/BKPhone/Home');
                 } else {
-                    header('Location: http://localhost/Laptrinhweb/admin');
+                    header('Location: http://localhost/BKPhone/admin');
                 }
             } else {
-                header('Location: http://localhost/Laptrinhweb/Login');
+                header('Location: http://localhost/BKPhone/Login');
             }
         }
     }
 
-    public function logout()
+    public function UserLogout()
     {
         $user = getUserToken();
         if ($user != null) {
             $token = getCookie('token');
             $id = $user['id'];
-            $this->db->deleteToken($id, $token);
+            $this->UserModel->deleteToken($id, $token);
             setcookie('token', '', time() - 100, '/');
         }
         session_destroy();

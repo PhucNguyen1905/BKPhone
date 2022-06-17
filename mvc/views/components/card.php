@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html class="no-js" lang="zxx">
-    
-<!-- index28:48-->
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PhoneStore</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="http://localhost/BKPhone/public/images/favicon.png">
-        <!-- Main Style CSS -->
-        <link rel="stylesheet" href="http://localhost/BKPhone/public/css/style.css">
-        <!-- Modernizr js -->
-        <link href="http://localhost/BKPhone/public/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
 <!--Section: Block Content-->
 <nav id="nav-breadcrumb" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="ml125 breadcrumb-item"><a href="http://localhost/Laptrinhweb/Home">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
-        </ol>
-    </nav>
+  <ol class="breadcrumb">
+    <li class="ml125 breadcrumb-item"><a href="http://localhost/BKPhone/Home">Trang chủ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+  </ol>
+</nav>
 <section>
-<?php
-  
-?>
+  <?php
+
+  ?>
   <!--Grid row-->
   <div id="wrapper" class="row">
 
@@ -36,18 +17,18 @@
 
       <!-- Card -->
       <?php
-        $total = 0;
-        for($i=0;$i<$data["countOrder"];$i++){
-            $total += $data["num"][$i]*$data["orderDetails"][$i]["price"];
-            echo '<div class="mb-3">
+      $total = 0;
+      for ($i = 0; $i < $data["countOrder"]; $i++) {
+        $total += $data["num"][$i] * $data["orderDetails"][$i]["price"];
+        echo '<div class="mb-3">
               <div class="pt-4 wish-list">
                 <div class="row mb-4">
                   <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                       <a href="http://localhost/Laptrinhweb/Home/productDetail/'.$data["orderDetails"][$i]["id"].'">
+                       <a href="http://localhost/BKPhone/Home/productDetail/' . $data["orderDetails"][$i]["id"] . '">
                         <div class="mask">
                           <img class="img-fluid w-100"
-                            src="'.$data["orderDetails"][$i]["thumbnail"].'">
+                            src="' . $data["orderDetails"][$i]["thumbnail"] . '">
                           <div class="mask rgba-black-slight"></div>
                         </div>
                       </a>
@@ -57,17 +38,17 @@
                     <div>
                       <div class="d-flex justify-content-between">
                         <div>
-                          <h5>'.$data["orderDetails"][$i]["title"].'</h5>
-                          <p class="mb-3 text-muted text-uppercase small">Số lượng: '.number_format($data["orderDetails"][$i]["price"]).' đ</p>
-                          <p class="mb-3 text-muted text-uppercase small">Số lượng: '.$data["num"][$i].'</p>
+                          <h5>' . $data["orderDetails"][$i]["title"] . '</h5>
+                          <p class="mb-3 text-muted text-uppercase small">Số lượng: ' . number_format($data["orderDetails"][$i]["price"]) . ' đ</p>
+                          <p class="mb-3 text-muted text-uppercase small">Số lượng: ' . $data["num"][$i] . '</p>
                         </div>
                       </div>
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
-                          <p style="color:red; cursor:pointer" onclick="deleteCart('.$data["orderDetails"][$i]["id"].')" href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
+                          <p style="color:red; cursor:pointer" onclick="deleteCart(' . $data["orderDetails"][$i]["id"] . ')" href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
                               class="fas fa-trash-alt mr-1"></i> Remove item </p>
                         </div>
-                        <p class="mb-0"><span><strong id="summary">'.number_format($data["num"][$i]*$data["orderDetails"][$i]["price"]).' đ</strong></span></p class="mb-0">
+                        <p class="mb-0"><span><strong id="summary">' . number_format($data["num"][$i] * $data["orderDetails"][$i]["price"]) . ' đ</strong></span></p class="mb-0">
                       </div>
                     </div>
                   </div>
@@ -75,12 +56,12 @@
               </div>
             </div>
             <hr/>';
-        }
+      }
       ?>
       <!-- Card -->
 
       <!-- Card -->
-      
+
       <!-- Card -->
 
     </div>
@@ -88,23 +69,15 @@
 
     <!--Grid column-->
     <div class="col-lg-4">
-    <div class="mb-3">
+      <div class="mb-3">
         <div class="pt-4">
 
           <h5 class="mb-4">Cho phép thanh toán</h5>
 
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-            alt="Visa">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-            alt="American Express">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-            alt="Mastercard">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
-            alt="PayPal acceptance mark">
+          <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg" alt="Visa">
+          <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg" alt="American Express">
+          <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg" alt="Mastercard">
+          <img class="mr-2" width="45px" src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png" alt="PayPal acceptance mark">
         </div>
       </div>
       <!-- Card -->
@@ -116,7 +89,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
               Số tiền tạm thời:
-              <span><?=number_format($total)?> đ</span>
+              <span><?= number_format($total) ?> đ</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
               Tiền giao hàng:
@@ -126,18 +99,17 @@
               <div>
                 <strong>Tổng số tiền cần phải thanh toán:</strong>
               </div>
-              <span><strong><?=number_format($total)?> đ</strong></span>
+              <span><strong><?= number_format($total) ?> đ</strong></span>
             </li>
           </ul>
           <?php
-            if(isset($user)){
-              echo '<a style="color:white;text-decoration:none" href="http://localhost/Laptrinhweb/Home/checkout/'.$total.'"><button type="button" class="btn btn-primary btn-block">Thanh toán khi nhận hàng</button></a>';
-              echo '<br/>';
-              echo '<a style="color:white;text-decoration:none" href="http://localhost/Laptrinhweb/Home/paymentOnline/'.$total.'"><button type="button" class="btn btn-primary btn-block">Thanh toán online</button></a>';
-            }
-            else echo '<a style="color:red" href="http://localhost/Laptrinhweb/Login">Vui lòng đăng nhập để đặt hàng</a>'; 
+          if (isset($user)) {
+            echo '<a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/checkout/' . $total . '"><button type="button" class="btn btn-primary btn-block">Thanh toán khi nhận hàng</button></a>';
+            echo '<br/>';
+            echo '<a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/paymentOnline/' . $total . '"><button type="button" class="btn btn-primary btn-block">Thanh toán online</button></a>';
+          } else echo '<a style="color:red" href="http://localhost/BKPhone/Login">Vui lòng đăng nhập để đặt hàng</a>';
           ?>
-          
+
 
         </div>
       </div>
@@ -156,15 +128,18 @@
 <!--Section: Block Content-->
 
 <script type="text/javascript">
-	function deleteCart(productId) {
-		var action = "delete";
-        $.ajax({
-            url:"../home/deleteCart",
-            method:"POST",
-            data:{action:action ,productId:productId},
-            success:function(data){
-                location.reload();
-            }
-        });
-	}
+  function deleteCart(productId) {
+    var action = "delete";
+    $.ajax({
+      url: "../home/deleteCart",
+      method: "POST",
+      data: {
+        action: action,
+        productId: productId
+      },
+      success: function(data) {
+        location.reload();
+      }
+    });
+  }
 </script>

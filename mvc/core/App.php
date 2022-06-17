@@ -1,4 +1,5 @@
 <?php
+
 class App
 {
     protected $controller = "Home";
@@ -7,19 +8,20 @@ class App
 
     function __construct()
     {
-        $arr = $this->URLProcess();
-
-        // Xu li Controller
-        if (isset($arr[0])) {
-            if (file_exists("./mvc/controllers/" . $arr[0] . ".php")) {
-                $this->controller = $arr[0];
-                unset($arr[0]);
-            }
+        $arr = $this->UrlProcess();
+        if (!$arr) {
+            $arr[0] = "home";
         }
+        // Controller   Home/asas/1212
+        if (file_exists("./mvc/controllers/" . $arr[0] . ".php")) {
+            $this->controller = $arr[0];
+            unset($arr[0]);
+        }
+
         require_once "./mvc/controllers/" . $this->controller . ".php";
         $this->controller = new $this->controller;
 
-        // Xu li Action
+        //Action
         if (isset($arr[1])) {
             if (method_exists($this->controller, $arr[1])) {
                 $this->action = $arr[1];
@@ -27,13 +29,14 @@ class App
             unset($arr[1]);
         }
 
-        // Xu li params
+        //Params
         $this->params = $arr ? array_values($arr) : [];
 
+        // gọi đến Controller
         call_user_func_array([$this->controller, $this->action], $this->params);
     }
 
-    function URLProcess()
+    function UrlProcess()
     {
         if (isset($_GET["url"])) {
             return explode("/", filter_var(trim($_GET["url"], "/")));

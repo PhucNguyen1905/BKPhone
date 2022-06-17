@@ -1,5 +1,5 @@
-ReWriteEngine On
-ReWriteCond %{REQUEST_FILENAME} !-d
-ReWriteCond %{REQUEST_FILENAME} !-f
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 
-ReWriteRule ^(.+)$ index.php?url=$1
+RewriteRule ^(.+) index.php?url=$1

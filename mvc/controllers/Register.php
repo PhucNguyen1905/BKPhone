@@ -1,35 +1,40 @@
 <?php
-require_once('mvc/core/Helper.php');
+require_once "mvc/utility/utility.php";
 class Register extends Controller
 {
-    public $db = null;
+
+    public $UserModel;
+
     public function __construct()
     {
-        $this->db = $this->model('UserModel');
-    }
-    public function GetPage()
-    {
-        $this->view("register", []);
+        $this->UserModel = $this->model("UserModel");
     }
 
-    public function PostRegister()
+    public function GetPage($checkEmail = 1)
+    {
+        $this->view("register", [
+            "checkEmail" => $checkEmail
+        ]);
+    }
+
+    public function UserRegister()
     {
 
         if (isset($_POST["btnRegister"])) {
             // get data
-            $fullname = getPostData('fullname');
-            $email = getPostData('email');
-            $password = getPostData('password');
-            $password = md5($password);
-            $phone = getPostData('phone');
-            $address = getPostData('address');
+            $fullname = getPost('fullname');
+            $email = getPost('email');
+            $password = getPost('password');
+            $password = getSecurityMD5($password);
+            $phone_number = getPost('phone_number');
+            $address = getPost('address');
 
-            // Insert to db
-            $result = $this->db->AddUser($fullname, $email, $password, $phone, $address);
-
-            if ($result["result"]) {
+            // insert database
+            $kq = $this->UserModel->InsertNewUser($fullname, $email, $password, $phone_number, $address);
+            // show home
+            if ($kq["result"]) {
                 header('Location: http://localhost/BKPhone/Login');
-            } else header('Location: http://localhost/BKPhone/Register');
+            } else header('Location: http://localhost/BKPhone/Register/GetPage/0');
         }
     }
 }
