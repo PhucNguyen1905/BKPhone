@@ -210,22 +210,22 @@ class Home extends Controller
         echo $id;
     }
 
-    public function quanlytaikhoan()
+    public function manageAccount()
     {
 
         $this->view("home", [
-            "render" => "quanlytaikhoan",
+            "render" => "manageAccount",
             "allCategory" => $this->allCategory
         ]);
     }
 
-    public function quanlydonhang($user_id)
+    public function manageOrder($user_id)
     {
         $orderSuccessModel = $this->model("OrderModel");
         $orderItem = $orderSuccessModel->getorders($user_id);
 
         $this->view("home", [
-            "render" => "quanlydonhang",
+            "render" => "manageOrder",
             "allCategory" => $this->allCategory,
             "orderItem" => $orderItem
         ]);
@@ -250,7 +250,7 @@ class Home extends Controller
         $orderItem = $orderSuccessModel->getorders($user_id);
 
         $this->view("home", [
-            "render" => "quanlydonhang",
+            "render" => "manageOrder",
             "allCategory" => $this->allCategory,
             "orderItem" => $orderItem
         ]);
@@ -265,20 +265,20 @@ class Home extends Controller
         ]);
     }
 
-    public function gioithieu()
+    public function introduce()
     {
 
         $this->view("home", [
-            "render" => "gioithieu",
+            "render" => "introduce",
             "allCategory" => $this->allCategory
         ]);
     }
 
-    public function tintuc()
+    public function news()
     {
 
         $this->view("home", [
-            "render" => "tintuc",
+            "render" => "news",
             "allCategory" => $this->allCategory
         ]);
     }

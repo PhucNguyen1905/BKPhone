@@ -43,10 +43,10 @@
                 <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
                 <ul class="list-unstyled foot-desc">
                     <li class="mb-2">
-                        <a href="http://localhost/BKPhone/Home/gioithieu">Giới thiệu</a>
+                        <a href="http://localhost/BKPhone/Home/introduce">Giới thiệu</a>
                     </li>
                     <li class="mb-2">
-                        <a href="http://localhost/BKPhone/Home/tintuc">Tin tức</a>
+                        <a href="http://localhost/BKPhone/Home/news">Tin tức</a>
                     </li>
                     <li class="mb-2">
                         <a href="http://localhost/BKPhone/Home/contact">Liên hệ</a>

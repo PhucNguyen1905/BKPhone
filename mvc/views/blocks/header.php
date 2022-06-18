@@ -1,7 +1,7 @@
 <?php
 require_once "mvc/utility/utility.php";
 if (isset($data["render"])) {
-    if ($data["render"] == "quanlytaikhoan")
+    if ($data["render"] == "manageAccount")
         $user = getUserToken(1);
     else $user = getUserToken();
 } else $user = getUserToken();
@@ -65,7 +65,7 @@ foreach ($cart as $item) {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item <?php if ($data["render"] != "tintuc" && $data["render"] != "gioithieu" && $data["render"] != "contact") echo "active"; ?>">
+                <li class="nav-item <?php if ($data["render"] != "news" && $data["render"] != "introduce" && $data["render"] != "contact") echo "active"; ?>">
                     <a class="nav-link text-warning fw-bold" href="http://localhost/BKPhone/Home">Trang chủ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -84,10 +84,10 @@ foreach ($cart as $item) {
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "tintuc") echo "active"; ?>" href="http://localhost/BKPhone/Home/tintuc">Tin tức</a>
+                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "news") echo "active"; ?>" href="http://localhost/BKPhone/Home/news">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "gioithieu") echo "active"; ?>" href="http://localhost/BKPhone/Home/gioithieu">Giới thiệu</a>
+                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "introduce") echo "active"; ?>" href="http://localhost/BKPhone/Home/introduce">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "contact") echo "active"; ?>" href="http://localhost/BKPhone/Home/contact">Liên hệ</a>
@@ -112,8 +112,8 @@ foreach ($cart as $item) {
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Register">Đăng ký</a>';
                     } else {
                         if ($user["role_id"] == 2) echo '<a class="dropdown-item" href="http://localhost/BKPhone/Admin">Quản lý trang web</a>';
-                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/quanlytaikhoan">Quản lý tài khoản</a>';
-                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/quanlydonhang/' . $user["id"] . '">Quản lý đơn hàng</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/manageAccount">Quản lý tài khoản</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/manageOrder/' . $user["id"] . '">Quản lý đơn hàng</a>';
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Login/UserLogout">Đăng xuất</a>';
                     }
 

@@ -17,13 +17,13 @@ else if($data["render"] == "card"){
 else if($data["render"] == "contact"){
     require_once "mvc/views/components/contact.php";
 }
-else if($data["render"] == "gioithieu"){
-    require_once "mvc/views/components/gioithieu.php";
+else if($data["render"] == "introduce"){
+    require_once "mvc/views/components/introduce.php";
 }
-else if($data["render"] == "tintuc"){
-    require_once "mvc/views/components/tintuc.php";
+else if($data["render"] == "news"){
+    require_once "mvc/views/components/news.php";
 }
-else if($data["render"] == "quanlytaikhoan"){
+else if($data["render"] == "manageAccount"){
     require_once "mvc/views/components/updateInfoUser.php";
 }
 else if($data["render"] == "checkout"){
@@ -32,8 +32,8 @@ else if($data["render"] == "checkout"){
 else if($data["render"] == "succesOrder"){
     require_once "mvc/views/components/succesOrder.php";
 }
-else if($data["render"] == "quanlydonhang"){
-    require_once "mvc/views/components/quanlydonhang.php";
+else if($data["render"] == "manageOrder"){
+    require_once "mvc/views/components/manageOrder.php";
 }
 else if($data["render"] == "orderDetail"){
     require_once "mvc/views/components/detailOrder.php";

@@ -54,7 +54,7 @@ class UserAdmin extends Controller
             } else $role_id = 1;
             $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password, $avatar);
             if ($location == 1) {
-                header('Location: http://localhost/BKPhone/Home/quanlytaikhoan');
+                header('Location: http://localhost/BKPhone/Home/manageAccount');
             } else header('Location: http://localhost/BKPhone/UserAdmin');
         }
     }
