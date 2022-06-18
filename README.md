@@ -14,7 +14,7 @@ Create schema named **bkphone** and run sql script **bkphone.sql**
 
 Default action for each Page/Controller is **GetPage** function
 
-For Register: Using bcrypt php (password_hash) to hash password
+For Register: Using md5 to hash password
 
 Role for user:
 - 1: User
