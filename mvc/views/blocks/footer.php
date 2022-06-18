@@ -15,6 +15,9 @@
 
                 <p class="foot-desc mb-0">Đội ngũ phát triển gồm 5 thành viên</p>
                 <p class="foot-desc mb-0">Nguyễn Trọng Phúc </p>
+                <p class="foot-desc mb-0">Nguyễn Văn Xuân Vũ </p>
+                <p class="foot-desc mb-0">Lê Mạnh Hùng </p>
+                <p class="foot-desc mb-0">Nguyễn Ngọc Nguyên </p>
 
             </div>
             <!-- Grid column -->

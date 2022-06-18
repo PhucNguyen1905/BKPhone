@@ -1,39 +1,66 @@
-
-   
-            <div class="breadcrumb-area">
-                <div class="container">
-                    <div class="breadcrumb-content">
-                        <ul>
-                            <li><a href="index.html">Trang chủ</a></li>
-                            <li class="active">Giới thiệu</li>
-                        </ul>
+<nav id="nav-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="ml125 breadcrumb-item"><a href="http://localhost/BKPhone/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+    </ol>
+</nav>
+<!-- Li's Breadcrumb Area End Here -->
+<!-- about wrapper start -->
+<div class="about-us-wrapper pt-60 pb-40">
+    <div>
+        <p class="page-header">CHÚNG TÔI LÀ AI</p>
+        <div class="textbox">
+            <p class="page-section">BKPhone - Nhà phân phối/Đại lý bán lẻ điện thoại số một miền Nam</p>
+            <p>BKPhone là nhà phân phối/đại lý bán lẻ uy tín. Tuy chỉ mới bắt đầu hoạt động kinh doanh trong 3 năm nhưng đã gặt hái được nhiều thành tựu đáng giá.</p>
+            <div class="intro">
+                <ul>
+                    <li>Doanh thu bán lẻ đạt Top 1</li>
+                    <li>Chỉ số tăng trưởng từng năm đạt Top 1</li>
+                    <li>Được đánh giá 4.9/5 từ người tiêu dùng</li>
+                    <li>Được đề cử giải thương hiệu nổi bật 2021</li>
+                </ul>
+            </div>
+            <p class="page-section">Giá trị cốt lõi</p>
+            <p>BKPhone mong muốn mang đến nhanh nhất cho người tiêu dùng những sản phẩm chất lượng.</p>
+        </div>
+    </div>
+    <div>
+        <p class="page-header">CÁC NHÀ SÁNG LẬP</p>
+        <div class="container textbox">
+            <div class="row m-4">
+                <div class="col-md-6 col-xl-3">
+                    <div class="card-founder">
+                        <img src="https://gptgroup.net/img/personnel/img/1650856925245_644234514_leader-img.jpg" alt="founder">
+                        <p>Nguyễn Trọng Phúc</p>
+                        <p>CEO</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card-founder">
+                        <img src="https://gptgroup.net/img/personnel/img/1650856925245_644234514_leader-img.jpg" alt="founder">
+                        <p>Lê Mạnh Hùng</p>
+                        <p>CMO</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card-founder">
+                        <img src="https://gptgroup.net/img/personnel/img/1650856925245_644234514_leader-img.jpg" alt="founder">
+                        <p>Nguyễn Ngọc Nguyên</p>
+                        <p>CHRO</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card-founder">
+                        <img src="https://gptgroup.net/img/personnel/img/1650856925245_644234514_leader-img.jpg" alt="founder">
+                        <p>Nguyễn Văn Xuân Vũ</p>
+                        <p>CIO</p>
                     </div>
                 </div>
             </div>
-            <!-- Li's Breadcrumb Area End Here -->
-            <!-- about wrapper start -->
-            <div class="about-us-wrapper pt-60 pb-40">
-                <div class="container">
-                    <div class="row">
-                        <!-- About Text Start -->
-                        <div class="col-lg-6 order-last order-lg-first">
-                            <div class="about-text-wrap">
-                                <h2>Giới thiệu</h2>
-                                <p>Cửa hàng điện thoại di động G.I.Joe là chi nhánh thuộc tập doàn BKU PhoneStore, tọa lạc tại vị trí đắc địa ở trung tâm Quận 10, Tp. Hồ Chí Minh. Chúng tôi cam kết mang đến những sản phẩm chất lượng, giá cả cạnh tranh nhất trên thị trường hiện nay.</p>
-                                <br>
-                                <p>Với phương châm: "Tất cả vì niềm tin của Khách hàng". Chúng tôi luôn cố gắng đem lại cho khách hàng những gì tốt nhất!</p>
-                            </div>
-                        </div>
-                        <!-- About Text End -->
-                        <!-- About Image Start -->
-                        <div class="col-lg-5 col-md-10">
-                            <div class="about-image-wrap">
-                                <img class="img-full" src="https://cdn3.iconfinder.com/data/icons/digital-marketing-filled/64/Digital_Marketing-21-512.png" alt="About Us" />
-                            </div>
-                        </div>
-                        <!-- About Image End -->
-                    </div>
-                </div>
-            </div>
-            <!-- about wrapper end -->
-            
+            <p class="page-section">Thông điệp từ nhà sáng lập</p>
+            <p style="text-align: center;">"Chúng tôi mong mọi người sẽ có trải nghiệm mua sắm tốt nhất." <i class="page-quote">(CEO)</i></p>
+            <p style="text-align: center;">"Mọi chính sách của chúng tôi sẽ luôn hướng đến người tiêu dùng." <i class="page-quote">(CMO)</i></p>
+        </div>
+    </div>
+</div>
+<!-- about wrapper end -->
