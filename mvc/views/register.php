@@ -59,7 +59,7 @@ if ($user != null) {
     </div>
     <div>
       <a id="link_login" href="http://localhost/BKPhone/Login">Tôi đã có tài khoản</a>
-      <button type="submit" onclick="checkRegister()" name="btnRegister" class="btn btn-primary">Register</button>
+      <button type="submit" onclick="checkRegister()" name="btnRegister" class="btn btn-primary">Đăng ký</button>
       <a id="link_register" href="http://localhost/BKPhone/Home">Trở về trang chủ</a>
     </div>
 
