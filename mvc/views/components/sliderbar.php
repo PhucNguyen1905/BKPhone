@@ -4,16 +4,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100"
-                        src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/f3-fl3-690-300-max.png" alt="First slide">
+                    <img class="d-block w-100" src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/s22.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/690x300_7_.png"
-                        alt="Second slide">
+                    <img class="d-block w-100" src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/Ipad%20mini%206.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100"
-                        src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/f3-fl3-690-300-max.png" alt="Third slide">
+                    <img class="d-block w-100" src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/Xiaomi%20LP.png" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -26,9 +23,8 @@
             </a>
         </div>
         <div class="imgSliderFlex">
-            <img style="margin-bottom: 10px;" src="https://cdn.tgdd.vn/2021/10/banner/cbfold3-830-300-830x300-2.png"
-                alt="Third slide" class="imgSlider">
-            <img src="https://cdn.tgdd.vn/2021/11/banner/big11-830-300-830x300.png" alt="Third slide" class="imgSlider">
+            <img style="margin-bottom: 10px;" src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/RB_galaxy-A73.jpg" alt="Third slide" class="imgSlider">
+            <img src="https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/RightBanner_Desktop%20ver%202.png" alt="Third slide" class="imgSlider">
         </div>
     </div>
     <!-- End Slider -->
