@@ -43,11 +43,16 @@ class UserAdmin extends Controller
             $phone_number = getPost('phone_number');
             $address = getPost('address');
             $password = getPost('password');
+            if (isset($_POST['avatar'])) {
+                $avatar = getPost('avatar');
+            } else {
+                $avatar = 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png';
+            }
             $location = getPost('updateInfoUser');
             if (isset($_POST["role_id"])) {
                 $role_id = getPost('role_id');
             } else $role_id = 1;
-            $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password);
+            $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password, $avatar);
             if ($location == 1) {
                 header('Location: http://localhost/BKPhone/Home/quanlytaikhoan');
             } else header('Location: http://localhost/BKPhone/UserAdmin');

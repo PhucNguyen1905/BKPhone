@@ -63,7 +63,7 @@
         <?php
         for ($i = 0; $i < $countFeedback; $i++) {
           echo '<div class="media mt-3 mb-4">
-            <img class="d-flex mr-3 z-depth-1" src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg" width="62"
+            <img class="d-flex mr-3 z-depth-1" src="' . $data["feedbackProduct"][$i]["avatar"] . '" width="62"
               alt="Generic placeholder image">
             <div class="media-body">
               <div class="d-sm-flex justify-content-between">

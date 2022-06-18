@@ -30,7 +30,7 @@ class UserAdminModel extends DB
         return $role;
     }
 
-    public function updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password)
+    public function updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password, $avatar)
     {
         $sql = "select * from User where email = '$email' and id <> $id";
         $userItem = $this->executeResult($sql, true);
@@ -39,8 +39,8 @@ class UserAdminModel extends DB
         }
         if ($password != '' && strlen($password >= 6)) {
             $password = getSecurityMD5($password);
-            $sql = "update user set fullname = '$fullname', email = '$email', phone_number = '$phone_number', address = '$address', password = '$password', role_id = $role_id where id = $id";
-        } else $sql = "update user set fullname = '$fullname', email = '$email', phone_number = '$phone_number', address = '$address', role_id = $role_id where id = $id";
+            $sql = "update user set fullname = '$fullname', email = '$email', phone_number = '$phone_number', address = '$address', password = '$password',avatar = '$avatar', role_id = $role_id where id = $id";
+        } else $sql = "update user set fullname = '$fullname', email = '$email', phone_number = '$phone_number', address = '$address',avatar = '$avatar', role_id = $role_id where id = $id";
         $this->execute($sql);
         return true;
     }
