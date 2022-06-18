@@ -13,7 +13,7 @@ require_once('mvc/views/blocks/header_admin.php');
 				<h5 style="color: red;"></h5>
 			</div>
 			<div class="panel-body">
-				<form method="post" action="http://localhost/BKPhone/UserAdmin/insertUser/">
+				<form method="post" action="http://localhost/BKPhone/UserAdmin/PostAdd/">
 					<div class="form-group">
 						<label for="usr"> Name:</label>
 						<input required="true" type="text" class="form-control" id="usr" name="fullname">
@@ -32,16 +32,16 @@ require_once('mvc/views/blocks/header_admin.php');
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="email">Email:</label>
-						<input required="true" type="email" class="form-control" id="email" name="email">
-					</div>
-					<div class="form-group">
 						<label for="phone_number">Phone:</label>
 						<input required="true" type="tel" class="form-control" id="phone_number" name="phone_number">
 					</div>
 					<div class="form-group">
 						<label for="address">Address:</label>
 						<input required="true" type="text" class="form-control" id="address" name="address">
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input required="true" type="email" class="form-control" id="email" name="email">
 					</div>
 					<div class="form-group">
 						<label for="pwd">Password:</label>

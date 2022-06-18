@@ -47,7 +47,7 @@ if ($user != null) {
     <!-- ===========SIDE BAR============ -->
     <div class="bg-white" id="sidebar-wrapper">
       <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-        <img src="<?php echo SCRIPT_ROOT . '/public/images/logo.png'; ?>" alt=""> BKPhone
+        <img src="<?php echo SCRIPT_ROOT . '/public/images/logo.png'; ?>" alt=""> <a href="http://localhost/BKPhone/Home" style="text-decoration: none;">BKPhone</a>
       </div>
       <div class="list-group list-group-flush my-3">
         <a href="http://localhost/BKPhone/OrderAdmin" class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
@@ -61,6 +61,9 @@ if ($user != null) {
         </a>
         <a href="http://localhost/BKPhone/UserAdmin" class="<?php echo $activeNav == 'user' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">person_outline</span>User
+        </a>
+        <a href="http://localhost/BKPhone/FeedbackAdmin" class="<?php echo $activeNav == 'feedback' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">chat</span>Feedback
         </a>
         <a href="http://localhost/BKPhone/Admin" class="<?php echo $activeNav == 'analytic' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">insights</span>Analytics

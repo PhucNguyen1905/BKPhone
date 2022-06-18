@@ -210,11 +210,11 @@ class Home extends Controller
         echo $id;
     }
 
-    public function quanlytaikhoan()
+    public function ManageAccount()
     {
 
         $this->view("home", [
-            "render" => "quanlytaikhoan",
+            "render" => "ManageAccount",
             "allCategory" => $this->allCategory
         ]);
     }
@@ -231,7 +231,7 @@ class Home extends Controller
         ]);
     }
 
-    public function detailOrderUser($id)
+    public function viewOrder($id)
     {
         $orderModel = $this->model("OrderModel");
         $detailorder = $orderModel->getDetailOrder($id);
@@ -239,7 +239,8 @@ class Home extends Controller
         $this->view("home", [
             "render" => "orderDetail",
             "detailOrder" => $detailorder,
-            "orderItem" => $orderItem
+            "orderItem" => $orderItem,
+            "allCategory" => $this->allCategory
         ]);
     }
 

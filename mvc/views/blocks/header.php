@@ -1,7 +1,7 @@
 <?php
 require_once "mvc/utility/utility.php";
 if (isset($data["render"])) {
-    if ($data["render"] == "quanlytaikhoan")
+    if ($data["render"] == "ManageAccount")
         $user = getUserToken(1);
     else $user = getUserToken();
 } else $user = getUserToken();
@@ -111,8 +111,8 @@ foreach ($cart as $item) {
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Login">Đăng nhập</a>';
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Register">Đăng ký</a>';
                     } else {
-                        if ($user["role_id"] == 2) echo '<a class="dropdown-item" href="http://localhost/BKPhone/Admin">Quản lý trang web</a>';
-                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/quanlytaikhoan">Quản lý tài khoản</a>';
+                        if ($user["role_id"] == 2) echo '<a class="dropdown-item" href="http://localhost/BKPhone/OrderAdmin">Quản lý trang web</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/ManageAccount">Quản lý tài khoản</a>';
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Home/quanlydonhang/' . $user["id"] . '">Quản lý đơn hàng</a>';
                         echo '<a class="dropdown-item" href="http://localhost/BKPhone/Login/UserLogout">Đăng xuất</a>';
                     }

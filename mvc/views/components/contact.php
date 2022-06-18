@@ -76,11 +76,11 @@
                 </li>
 
                 <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>034 765 1292</p>
+                    <p>0123 456 789</p>
                 </li>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>loc.nguyencse@gmail.com</p>
+                    <p>ngtrongphuc1905@gmail.com</p>
                 </li>
             </ul>
         </div>

@@ -9,7 +9,7 @@ for ($i = 0; $i < 12; $i++)
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Dashboard</h1>
+        <h1>Analytics</h1>
     </div>
 </div>
 <div class="container">
@@ -38,9 +38,9 @@ for ($i = 0; $i < 12; $i++)
     let massPopChart = new Chart(myChart, {
         type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data: {
-            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [{
-                label: 'Tổng số tiền bán hàng',
+                label: 'Total bill',
                 data: [
                     m1,
                     m2,
@@ -57,18 +57,18 @@ for ($i = 0; $i < 12; $i++)
                 ],
                 //backgroundColor:'green',
                 backgroundColor: [
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(153, 102, 255, 0.6)'
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)',
+                    'rgba(59, 138, 222, 0.8)'
                 ],
                 borderWidth: 1,
                 borderColor: '#777',
@@ -79,7 +79,7 @@ for ($i = 0; $i < 12; $i++)
         options: {
             title: {
                 display: true,
-                text: 'Thống kê doanh thu hàng tháng',
+                text: 'Monthly revenue statistics',
                 fontSize: 25
             },
             legend: {

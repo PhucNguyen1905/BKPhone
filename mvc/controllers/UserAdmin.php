@@ -24,7 +24,7 @@ class UserAdmin extends Controller
         header('Location: http://localhost/BKPhone/UserAdmin');
     }
 
-    public function viewUpdateUser($id)
+    public function ViewEdit($id)
     {
         $userItem = $this->userModel->selectUser($id);
         $role = $this->userModel->getRole();
@@ -34,7 +34,7 @@ class UserAdmin extends Controller
         ]);
     }
 
-    public function updateUser()
+    public function PostEdit()
     {
         if (isset($_POST)) {
             $id = getPost('id');
@@ -54,12 +54,12 @@ class UserAdmin extends Controller
             } else $role_id = 1;
             $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password, $avatar);
             if ($location == 1) {
-                header('Location: http://localhost/BKPhone/Home/quanlytaikhoan');
+                header('Location: http://localhost/BKPhone/Home/ManageAccount');
             } else header('Location: http://localhost/BKPhone/UserAdmin');
         }
     }
 
-    public function viewInsertUser()
+    public function ViewAdd()
     {
         $id = 0;
         $userItem = $this->userModel->selectUser($id);
@@ -70,7 +70,7 @@ class UserAdmin extends Controller
         ]);
     }
 
-    public function insertUser()
+    public function PostAdd()
     {
         if (isset($_POST)) {
             $fullname = getPost('fullname');

@@ -1,5 +1,5 @@
 <?php
-$title = 'Thêm/Sửa Sản Phẩm';
+$title = 'Phone';
 $activeNav = "phone";
 require_once('mvc/views/blocks/header_admin.php');
 
@@ -14,7 +14,7 @@ require_once('mvc/views/blocks/header_admin.php');
         <a href="http://localhost/BKPhone/ProductAdmin" class="btn btn-outline-primary">Back to Phone list</a>
         <div class="panel panel-primary">
             <div class="panel-body">
-                <form method="post" enctype="multipart/form-data" action="http://localhost/BKPhone/ProductAdmin/insertProductController">
+                <form method="post" enctype="multipart/form-data" action="http://localhost/BKPhone/ProductAdmin/PostAdd">
                     <div class="row">
                         <div class="col-md-9 col-12">
                             <div class="form-group">

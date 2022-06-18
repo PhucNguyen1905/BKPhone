@@ -1,5 +1,5 @@
 <?php
-$title = 'Quản Lý Sản Phẩm';
+$title = 'Phone';
 $activeNav = "phone";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
@@ -7,7 +7,7 @@ require_once('mvc/views/blocks/header_admin.php');
 <!-- ===========Main Content============ -->
 <div class="container-fluid px-4">
 	<h3 class="fs-4 mb-3">Phone Management</h3>
-	<a href="http://localhost/BKPhone/ProductAdmin/viewAddProduct" class="btn btn-outline-primary">Add New Phone</a>
+	<a href="http://localhost/BKPhone/ProductAdmin/Add" class="btn btn-outline-primary">Add New Phone</a>
 	<div class="row mt-3">
 
 		<div class="col">
@@ -34,8 +34,8 @@ require_once('mvc/views/blocks/header_admin.php');
 							<td><?php echo $item['title']; ?></td>
 							<td><?php echo $item['price']; ?></td>
 							<td><?php echo $item['discount']; ?></td>
-							<td><a href="<?php echo 'http://localhost/BKPhone/ProductAdmin/viewUpdateProduct/' . $item['id']; ?>" class="editLink">Edit</a></td>
-							<td><a class="delLink" href="<?php echo 'http://localhost/BKPhone/ProductAdmin/deleteProduct/' . $item['id']; ?>" style="color: #ff7782;">Delete</a></td>
+							<td><a href="<?php echo 'http://localhost/BKPhone/ProductAdmin/ViewEdit/' . $item['id']; ?>" class="editLink">Edit</a></td>
+							<td><a class="delLink" href="<?php echo 'http://localhost/BKPhone/ProductAdmin/Delete/' . $item['id']; ?>" style="color: #ff7782;">Delete</a></td>
 						</tr>
 					<?php $i = $i + 1;
 					} ?>

@@ -5,7 +5,7 @@ if ($user != null) {
     if ($user["role_id"] == 1) {
         header('Location: http://localhost/BKPhone/Home');
     } else {
-        header('Location: http://localhost/BKPhone/admin');
+        header('Location: http://localhost/BKPhone/OrderAdmin');
     }
 }
 ?>

@@ -4,14 +4,14 @@ $user = getUserToken(1);
 
 <div class="row" style="margin: 70px auto 0;width:50%">
 	<div class="col-md-12 table-responsive">
-		<h3> Quản lý tài khoản</h3>
+		<h3>Quản lý tài khoản</h3>
 		<img src="<?= $user["avatar"] ?>" class="img-thumbnail" style="width: 10rem; height: 10rem;" alt="User avatar">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h5 style="color: red;"></h5>
 			</div>
 			<div class="panel-body">
-				<form method="post" action="http://localhost/BKPhone/UserAdmin/updateUser/">
+				<form method="post" action="http://localhost/BKPhone/UserAdmin/PostEdit/">
 					<div class="form-group">
 						<label for="usr">Họ & Tên:</label>
 						<input required="true" type="text" class="form-control" id="usr" name="fullname" value="<?= $user["fullname"] ?>">

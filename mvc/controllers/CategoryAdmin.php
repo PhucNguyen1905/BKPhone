@@ -24,7 +24,7 @@ class CategoryAdmin extends Controller
         $this->view("category/add", []);
     }
 
-    public function PostAddCategory()
+    public function PostAdd()
     {
         if (isset($_POST)) {
             $name = getPost("name");
@@ -33,7 +33,7 @@ class CategoryAdmin extends Controller
         header('Location: http://localhost/BKPhone/CategoryAdmin');
     }
 
-    public function updateCategoryController($id)
+    public function ViewEdit($id)
     {
         $name = '';
         $name = $this->categoryModel->selectCategory($id);
@@ -43,7 +43,7 @@ class CategoryAdmin extends Controller
         ]);
     }
 
-    public function postEditCategory()
+    public function PostEdit()
     {
         if (isset($_POST)) {
             $id = getPost('id');
@@ -53,7 +53,7 @@ class CategoryAdmin extends Controller
         header('Location: http://localhost/BKPhone/CategoryAdmin');
     }
 
-    public function deleteCategoryController($id)
+    public function Delete($id)
     {
         $data = $this->categoryModel->selectCategoryDelete($id);
         if ($data)
@@ -61,7 +61,7 @@ class CategoryAdmin extends Controller
         else header('Location: http://localhost/BKPhone/CategoryAdmin/GetPage/1');
     }
 
-    public function checkDeleteCategoryController($id)
+    public function checkDelete($id)
     {
         $data = $this->categoryModel->selectCategoryDelete($id);
         var_dump($data);

@@ -17,7 +17,7 @@
     for ($i = 0; $i < $countOrderItem; $i++) {
       echo '<tr>
         <td>' . ($i + 1) . '</td>
-        <td><a href="http://localhost/BKPhone/Home/detailOrderUser/' . $data["orderItem"][$i]["id"] . '">' . $data["orderItem"][$i]["fullname"] . '</a></td>
+        <td><a href="http://localhost/BKPhone/Home/viewOrder/' . $data["orderItem"][$i]["id"] . '">' . $data["orderItem"][$i]["fullname"] . '</a></td>
         <td>' . $data["orderItem"][$i]["phone"] . '</td>
         <td>' . $data["orderItem"][$i]["created_at"] . '</td>
         <td>' . number_format($data["orderItem"][$i]["total_money"]) . ' đ</td>

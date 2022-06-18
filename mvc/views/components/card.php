@@ -46,7 +46,7 @@
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
                           <p style="color:red; cursor:pointer" onclick="deleteCart(' . $data["orderDetails"][$i]["id"] . ')" href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
-                              class="fas fa-trash-alt mr-1"></i> Remove item </p>
+                              class="fas fa-trash-alt mr-1"></i> Xóa </p>
                         </div>
                         <p class="mb-0"><span><strong id="summary">' . number_format($data["num"][$i] * $data["orderDetails"][$i]["price"]) . ' đ</strong></span></p class="mb-0">
                       </div>

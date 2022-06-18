@@ -1,18 +1,18 @@
 <?php
-$title = 'Thay đổi Thông tin Tài Khoản Người Dùng';
+$title = 'Edit user';
 $isActive = "UserAdmin";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
 
 <div class="row" style="margin-top: 20px;">
 	<div class="col-md-12 table-responsive">
-		<h3> Thay đổi Tài Khoản Người Dùng</h3>
+		<h3>Edit user information</h3>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h5 style="color: red;"></h5>
 			</div>
 			<div class="panel-body">
-				<form method="post" action="http://localhost/BKPhone/UserAdmin/updateUser/">
+				<form method="post" action="http://localhost/BKPhone/UserAdmin/PostEdit/">
 					<div class="form-group">
 						<label for="usr">Họ & Tên:</label>
 						<input required="true" type="text" class="form-control" id="usr" name="fullname" value="<?= $data["userItem"]["fullname"] ?>">

@@ -19,7 +19,7 @@ class ProductAdmin extends Controller
         ]);
     }
 
-    public function viewAddProduct()
+    public function Add()
     {
         $category = $this->model("CategoryModel")->getCategory();
         $this->view("product/addProduct", [
@@ -27,7 +27,7 @@ class ProductAdmin extends Controller
         ]);
     }
 
-    public function insertProductController()
+    public function PostAdd()
     {
         if (isset($_POST)) {
             $title = getPost('title');
@@ -41,7 +41,7 @@ class ProductAdmin extends Controller
         header('Location: http://localhost/BKPhone/productAdmin');
     }
 
-    public function viewUpdateProduct($id)
+    public function ViewEdit($id)
     {
         $category = $this->model("CategoryModel")->getCategory();
         $data = $this->productModel->selectProduct($id);
@@ -57,7 +57,7 @@ class ProductAdmin extends Controller
         ]);
     }
 
-    public function updateProductController()
+    public function PostEdit()
     {
         if (isset($_POST)) {
             $id = getPost('id');
@@ -72,7 +72,7 @@ class ProductAdmin extends Controller
         header('Location: http://localhost/BKPhone/productAdmin');
     }
 
-    public function deleteProduct($id)
+    public function Delete($id)
     {
         $this->productModel->selectProductDelete($id);
         header('Location: http://localhost/BKPhone/productAdmin');

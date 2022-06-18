@@ -26,7 +26,7 @@ class Login extends Controller
             $password = getSecurityMD5($password);
 
 
-            $kq = $this->UserModel->XacNhanTaiKhoan($email, $password);
+            $kq = $this->UserModel->Authenticate($email, $password);
 
             // show home
 
@@ -34,7 +34,7 @@ class Login extends Controller
                 if ($kq["role_id"] == 1) {
                     header('Location: http://localhost/BKPhone/Home');
                 } else {
-                    header('Location: http://localhost/BKPhone/admin');
+                    header('Location: http://localhost/BKPhone/OrderAdmin');
                 }
             } else {
                 header('Location: http://localhost/BKPhone/Login');

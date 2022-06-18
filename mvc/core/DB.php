@@ -1,8 +1,10 @@
 <?php
 require_once "config.php";
-class DB {
+class DB
+{
     // SQL: insert, update, delete
-    function execute($sql) {
+    function execute($sql)
+    {
         //open connection
         $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
         mysqli_set_charset($conn, 'utf8');
@@ -15,7 +17,8 @@ class DB {
     }
 
     // SQL: select -> lay du lieu dau ra (select danh sach ban ghi, lay 1 ban ghi)
-    function executeResult($sql, $isSingle = false) {
+    function executeResult($sql, $isSingle = false)
+    {
         $data = null;
 
         //open connection
@@ -24,12 +27,12 @@ class DB {
 
         //query
         $resultset = mysqli_query($conn, $sql);
-        if($resultset){
-            if($isSingle) {
+        if ($resultset) {
+            if ($isSingle) {
                 $data = mysqli_fetch_array($resultset, 1);
             } else {
                 $data = [];
-                while(($row = mysqli_fetch_array($resultset, 1)) != null) {
+                while (($row = mysqli_fetch_array($resultset, 1)) != null) {
                     $data[] = $row;
                 }
             }
@@ -39,4 +42,3 @@ class DB {
         return $data;
     }
 }
-

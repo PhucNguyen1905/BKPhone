@@ -26,8 +26,8 @@ require_once('mvc/views/blocks/header_admin.php');
 						<tr>
 							<td><?php echo $i + 1; ?></td>
 							<td><?php echo  $data["category"][$i]['name']; ?></td>
-							<td><a href="<?php echo 'http://localhost/BKPhone/CategoryAdmin/updateCategoryController/' . $data["category"][$i]["id"]; ?>" class="editLink">Edit</a></td>
-							<td><a href="<?php echo 'http://localhost/BKPhone/CategoryAdmin/deleteCategoryController/' . $data["category"][$i]["id"]; ?>" class="delLink" style="color: #ff7782;">Delete</a></td>
+							<td><a href="<?php echo 'http://localhost/BKPhone/CategoryAdmin/ViewEdit/' . $data["category"][$i]["id"]; ?>" class="editLink">Edit</a></td>
+							<td><a href="<?php echo 'http://localhost/BKPhone/CategoryAdmin/Delete/' . $data["category"][$i]["id"]; ?>" class="delLink" style="color: #ff7782;">Delete</a></td>
 						</tr>
 					<?php } ?>
 				</tbody>

@@ -1,15 +1,18 @@
 <?php
 
-class Admin extends Controller{
+class Admin extends Controller
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->orderModel = $this->model("OrderModel");
     }
 
-    function GetPage() {
-        $doanhthu = $this->orderModel->getDoanhthu();
-        $this->view("admin",[
-            "doanhthu"=>$doanhthu
+    function GetPage()
+    {
+        $doanhthu = $this->orderModel->getRevenue();
+        $this->view("admin", [
+            "doanhthu" => $doanhthu
         ]);
     }
 }
