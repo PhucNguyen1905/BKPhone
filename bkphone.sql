@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 17, 2022 lúc 04:10 AM
+-- Thời gian đã tạo: Th6 18, 2022 lúc 05:03 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.11
 
@@ -42,7 +42,8 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (3, 'Xiaomi'),
 (10, 'Nokia'),
 (11, 'Huawei'),
-(12, 'Sony');
+(12, 'Sony'),
+(109, 'Coconut123');
 
 -- --------------------------------------------------------
 
@@ -59,6 +60,13 @@ CREATE TABLE `feedback` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
+(52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0);
 
 -- --------------------------------------------------------
 
@@ -152,10 +160,23 @@ INSERT INTO `product` (`id`, `category_id`, `title`, `price`, `discount`, `thumb
 (55, 10, 'Nokia 105 4G', 900000, 750000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/0/105-2.jpg', 'Điện thoại Nokia 105 4G tập trung vào tối ưu tính tiện lợi cho người dùng. Chiếc máy sở hữu thân hình gọn gàng, mỏng nhẹ, với thiết kế bỏ túi thân thiện giúp bạn dễ dàng cất giữ và lấy máy nghe gọi khi cần. Lớp vỏ máy được chế tác từ chất liệu bền bỉ chuẩn Châu Âu nhằm tăng cường độ cứng cáp và an toàn cho máy.', '2022-06-17 02:03:28', '2022-06-17 02:03:28', 0),
 (56, 10, 'Nokia C30 2GB 32GB', 3000000, 2500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-c30-xanh-600x600_4_4.jpg', 'Thoải mái trải nghiệm cả ngày - Viên pin cực lớn 6000 mAh, sạc tối đa 10W', '2022-06-17 02:05:31', '2022-06-17 02:05:31', 0),
 (57, 10, 'Nokia 215 4G', 1500000, 1250000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-215-4g-600jpg-600x600.jpg', 'Với nhiều người dùng thích sự nhỏ gọn của các thiết kế dòng điện thoại phổ thông của Nokia, việc trang bị cho mình một chiếc Nokia 215 4G là một sự lựa chọn phù hợp với đầy đủ các tính năng và còn thêm cả khả năng có thể truy cập internet mang đến cho người dùng trải nghiệm hoàn toàn mới.', '2022-06-17 02:06:33', '2022-06-17 02:06:33', 0),
-(58, 11, 'Huawei P30', 20990000, 15990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/e/l/elle_aurora_rear_rgb-500x500_1.png', 'Điện thoại Huawei P30 nổi bật với màu “Gradient” vốn đã được sử dụng trên Huawei P20, được lấy cảm hứng từ xu hướng sử dụng bản màu Gradients trên các giao diện. Với lớp phủ quang học NCVM bên dưới mặt kính, kết hợp phản chiếu khúc xạ ánh sáng để tạo nên dải màu tươi mới, giúp nó có thể đổi màu từ màu tím sang xanh lục, sang xanh lam.', '2022-06-17 02:07:49', '2022-06-17 02:07:49', 0),
+(58, 11, 'Huawei P30', 20990000, 15990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-p50.jpg', 'Điện thoại Huawei P30 nổi bật với màu “Gradient” vốn đã được sử dụng trên Huawei P20, được lấy cảm hứng từ xu hướng sử dụng bản màu Gradients trên các giao diện. Với lớp phủ quang học NCVM bên dưới mặt kính, kết hợp phản chiếu khúc xạ ánh sáng để tạo nên dải màu tươi mới, giúp nó có thể đổi màu từ màu tím sang xanh lục, sang xanh lam.', '2022-06-18 02:51:46', '2022-06-18 02:51:46', 0),
 (59, 11, 'Huawei Mate X3', 18500000, 15000000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-mate-x2-4g-1-500x500.jpg', 'Huawei Mate X3 là chiếc smartphone màn hình gập tiếp theo nhà Huawei muốn mang đến cho người dùng. Sở hữu màn hình gập độc đáo cùng những trang bị hiện đại về vi xử lý, camera cũng như công nghệ sạc ấn tượng Mate X3 sẽ giúp người dùng có những giây phút trải nghiệm cực chất và bất tận.', '2022-06-17 02:08:31', '2022-06-17 02:08:31', 0),
 (60, 11, 'Huawei Nova 8i', 12990000, 11990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-nova-8-600x600-600x600.jpg', 'Là một hãng điện thoại nổi tiêng với các sản phẩm chất lượng, Huawei mới đây tiếp tục cho ra mắt mẫu smartphone mới mang tên Huawei Nova 8i. Điện thoại Huawei Nova 8i là mẫu điện thoại phân khúc tầm trung với thiết kế cùng hiệu năng ấn tượng.', '2022-06-17 02:09:09', '2022-06-17 02:09:09', 0),
-(61, 11, 'Huawei P50 Pro+', 25990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-p50-pro-plus.jpg', 'Điện thoại Huawei P50 Pro Plus được trang bị màn hình cong thác nước đẹp mắt cùng hai viền bezel cạnh bên siêu mỏng. Bên trong màn hình là thiết kế đục lỗ chứa camera selfie bên trong màn hình. Nhờ đó màn hình Huawei P50 Pro Plus có một không gian hiển thị khá lớn, lên đến 91,6%.', '2022-06-17 02:09:48', '2022-06-17 02:09:48', 0);
+(61, 11, 'Huawei P50 Pro+', 25990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-p50-pro-plus.jpg', 'Điện thoại Huawei P50 Pro Plus được trang bị màn hình cong thác nước đẹp mắt cùng hai viền bezel cạnh bên siêu mỏng. Bên trong màn hình là thiết kế đục lỗ chứa camera selfie bên trong màn hình. Nhờ đó màn hình Huawei P50 Pro Plus có một không gian hiển thị khá lớn, lên đến 91,6%.', '2022-06-17 02:09:48', '2022-06-17 02:09:48', 0),
+(62, 2, 'iPhone 8 Plus 128GB Chính hãng', 16000000, 13500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-8-plus_4_.jpg', 'Kế thừa sự thành công của iPhone 7/7 Plus, Apple lại tiếp tục làm cộng đồng yêu công nghệ phải chú ý khi cho ra mắt mẫu điện thoại iPhone 12 và kế tiếp của họ - iPhone 8 Plus 128GB. iPhone 8 Plus 128GB sở hữu thiết kế đẳng cấp với mặt lưng làm từ kính hoàn toàn mới lạ, độc đáo và sang trọng hơn người anh em tiền nhiệm. Bên cạnh đó, iPhone 8 Plus cũng có nhiều nâng cấp từ camera, hiệu năng,… để mang đến cho người dùng những trải nghiệm đỉnh cao hơn.', '2022-06-17 16:04:54', '2022-06-17 16:04:54', 0),
+(64, 2, 'iPhone SE 2022 | Chính hãng VN/A', 12990000, 11390000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg', 'Thế hệ iPhone SE trước đó chỉ được trang bị ba phiên bản màu. Sang đến thế hệ SE 2022, thiết bị vẫn giữ lại ba màu sắc trên thế hệ trước lần lượt là đỏ, trắng và đen. Đặc biệt, iPhone SE 2022 sẽ không được trang bị thêm màu sắc mới. Với ba phiên bản màu sắc trên thì Midnight và Starlight sẽ là những sự lựa chọn an toàn, không bị lỗi thời sau thời gian sử dụng. Trong khi đó SE 2022 đỏ sẽ là một sự lựa chọn cá tính, hợp với các người dùng trẻ.', '2022-06-18 02:30:53', '2022-06-18 02:30:53', 0),
+(65, 2, 'iPhone 13 512GB | Chính hãng VN/A', 33990000, 25500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-13-02_4.jpg', 'Điện thoại iPhone 13 512GB được nhiều khách hàng, người dùng yêu thích nhờ bộ nhớ cao, dung lượng pin lớn cùng tốc độ vượt trội giúp gia tăng khả năng xử lý của điện thoại một cách đáng kể, mang lại trải nghiệm ấn tượng cho người dùng.', '2022-06-18 02:32:08', '2022-06-18 02:32:08', 0),
+(66, 2, 'iPhone 13 256GB - Mỹ', 27990000, 23590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-13-05.jpg', 'Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).', '2022-06-18 02:55:19', '2022-06-18 02:55:19', 0),
+(67, 1, 'Samsung Galaxy Note 20 Ultra', 32990000, 18990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/b/l/black_final_1.jpg', 'Bên cạnh biên bản Galaxy Note 20 thường, Samsung còn cho ra mắt Note 20 Ultra 5G cho khả năng kết nối dữ liệu cao cùng thiết kế nguyên khối sang trọng, bắt mắt. Đây sẽ là sự lựa chọn hoàn hảo dành cho bạn để sử dụng mà không bị lỗi thời sau thời gian dài ra mắt.', '2022-06-18 02:39:45', '2022-06-18 02:39:45', 0),
+(68, 1, 'Samsung Galaxy A71', 10990000, 7700000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/a/samsung-galaxy-a71-thumblo_n-tra_ng-600x600_1_2_1.jpg', 'Samsung Galaxy A71 sẽ là điện thoại giá cả phải chăng của Samsung với mục đích tiếp cận đối tượng rộng hơn. Samsung A71 là sản phẩm thuộc series Samsung Galaxy A với màn hình đục lỗ, cấu hình mạnh mẽ, cụm bốn camera sau chất lượng cao và cùng nhiều công nghệ thời thượng.', '2022-06-18 02:41:47', '2022-06-18 02:41:47', 0),
+(69, 11, 'Huawei Y6p', 15990000, 8990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/p/4/p40_0001_layer_1.jpg', 'Huawei Y6p 2020 là phiên bản nâng cấp hoàn hảo của thế hệ 2019. Mẫu smartphone giá rẻ mới nhất của Huawei sở hữu cấu hình khá nổi bật gồm chip Mediatek Helio P22, 3GB RAM và bộ nhớ trong 64GB đảm bảo mọi trải nghiệm mọi tác vụ mượt mà.', '2022-06-18 02:50:10', '2022-06-18 02:50:10', 0),
+(70, 11, 'Huawei Y6S', 12990000, 7990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637072477486312431_huawei-y6s-1.png', 'Dòng Huawei Y-series từ khi ra mắt đã luôn nhận được sự yêu thích của người sử dụng bởi mức giá “mềm” cho đa số đối tượng cùng với cấu hình đạt sự ổn định tốt. Nối tiếp thành công vừa qua thì mẫu smartphone Huawei Y6S 2019 chắc chắn sẽ khiến người dùng hài lòng về chất lượng sản phẩm mang lại.', '2022-06-18 02:43:41', '2022-06-18 02:43:41', 0),
+(71, 3, 'Xiaomi Mi 11 Lite 5G', 10590000, 7990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-11-lite-5g-ne-600x600.jpg', 'Mi 11 Lite 5G và 4G là bộ đôi vừa được Xiaomi trình làng. So sánh nhanh thì cả hai máy sở hữu cùng kích thước màn hình, thông số cụm camera sau và dung lượng pin. Nhưng bên cạnh đó thì phiên bản 5G vẫn còn một số điểm khác biệt so với bản 4G.', '2022-06-18 02:56:50', '2022-06-18 02:56:50', 0),
+(72, 3, 'Xiaomi 12 Pro (5G)', 27990000, 21590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-12-pro_arenamobiles.jpg', 'Là một trong những dòng smartphone chủ lực của hãng, Xiaomi 12 Pro sở hữu một thiết kế ấn tượng cùng hiệu năng vượt trội mang lại trải nghiệm dùng mượt mà. Bên cạnh đó, máy còn được trang bị hệ thống camera vô cùng chất lượng cho ra những bức ảnh chuyên nghiệp.', '2022-06-18 02:45:50', '2022-06-18 02:45:50', 0),
+(73, 10, 'Nokia G21', 4290000, 3590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/t/h/thumb_602966_default_big.jpg', 'Dù nằm trong phân khúc phổ thông, Nokia G21 sở hữu loạt thông số ấn tượng như camera 50 MP, màn hình lớn sắc nét, vi xử lý tốt cùng pin \"trâu\" giúp cho đây là sản phẩm smartphone dễ tiếp cận và phù hợp cho tất cả người dùng công nghệ.', '2022-06-18 02:46:56', '2022-06-18 02:46:56', 0),
+(74, 10, 'Nokia G50 (5G)', 6590000, 4590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-g50-4_1.jpeg', 'Hãng điện thoại lừng danh Nokia vẫn chưa ngừng cuộc chơi trong thị phần smartphone. Bằng chứng là việc hãng vừa tung ra thị trường sản phẩm mới mang tên Nokia G50 - hỗ trợ mạng 5G với mức giá phổ thông cho tất cả người yêu công nghệ.', '2022-06-18 02:47:51', '2022-06-18 02:47:51', 0),
+(75, 1, 'Samsung Galaxy S20 Ultra', 29990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637170935875912528_ss-s20-ultra-den-1.png', 'Samsung Galaxy S20 Ultra là flagship mới của dòng Galaxy S sẽ được Samsung giới thiệu vào đầu năm 2020. Đây là phiên bản cao cấp nhất bên cạnh phiên bản thường và bản Plus. Điện thoại sẽ được trang bị những tính năng tuyệt vời, dung lượng pin lớn, màn hình được trang bị tần số quét 120Hz, camera chính có độ phân giải 108mp sẽ là những tính năng nổi bật nhất. Để tiết kiệm chi phí nhưng vẫn có thể trải nghiệm các tính năng cao cấp, tham khảo ngay điện thoại Samsung S20 FE đang có mức giá cực hấp dẫn.', '2022-06-18 03:00:14', '2022-06-18 03:00:14', 0);
 
 -- --------------------------------------------------------
 
@@ -188,6 +209,13 @@ CREATE TABLE `tokens` (
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `tokens`
+--
+
+INSERT INTO `tokens` (`user_id`, `token`, `created_at`) VALUES
+(46, '00417025455405451a3cb3f050626dc0', '2022-06-18 04:28:55');
+
 -- --------------------------------------------------------
 
 --
@@ -210,7 +238,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `deleted`) VALUES
-(46, 'admin', 'admin@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 0);
+(46, 'admin', 'admin@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 0),
+(50, 'Phuc Nguyen', 'user1@gamil.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0),
+(51, 'Phúc Nguyễn', 'user2@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0),
+(52, 'Test 123', '123@123.com', '123', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -286,13 +317,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
@@ -316,7 +347,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
@@ -328,7 +359,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

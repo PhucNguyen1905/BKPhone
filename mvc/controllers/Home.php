@@ -14,19 +14,19 @@ class Home extends Controller
 
     function GetPage()
     {
-        $productVsmart = $this->productModel->selectProductCategory(1, 1);
+        $productSamsung = $this->productModel->selectProductCategory(1, 1);
         $productIphone = $this->productModel->selectProductCategory(2, 1);
-        $productSamsung = $this->productModel->selectProductCategory(3, 1);
-        $productXiaomi = $this->productModel->selectProductCategory(10, 1);
-        $productOppo = $this->productModel->selectProductCategory(11, 1);
+        $productXiaomi = $this->productModel->selectProductCategory(3, 1);
+        $productNokia = $this->productModel->selectProductCategory(10, 1);
+        $productHuawei = $this->productModel->selectProductCategory(11, 1);
         $this->view("home", [
             "render" => "home",
             "allCategory" => $this->allCategory,
-            "productVsmart" => $productVsmart,
+            "productHuawei" => $productHuawei,
             "productIphone" => $productIphone,
             "productSamsung" => $productSamsung,
             "productXiaomi" => $productXiaomi,
-            "productOppo" => $productOppo
+            "productNokia" => $productNokia
         ]);
     }
 

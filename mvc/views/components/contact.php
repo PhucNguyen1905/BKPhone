@@ -1,8 +1,13 @@
 <!--Section: Contact v.2-->
 <p class="d-none" id="alertSuccess"><?= $data["alertSuccess"] ?></p>
 
-
-<div style="margin-top:70px" id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+<nav id="nav-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="ml125 breadcrumb-item"><a href="http://localhost/BKPhone/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+    </ol>
+</nav>
+<div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5623.641672731866!2d106.65721623557643!3d10.772602968920005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1637332111149!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 

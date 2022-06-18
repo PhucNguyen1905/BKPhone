@@ -6,7 +6,7 @@
 </nav>
 <!-- End Breadcrumb -->
 <!--Section: Block Content-->
-<div id="wrapper">
+<div class="product-list-wrapper">
 
   <section class="mb-5">
     <div class="row">
@@ -27,10 +27,10 @@
 
         <h5><?= $data["productItem"]["title"] ?></h5>
         <hr>
-        <p><span class="mr-1"><strong><?= number_format($data["productItem"]["price"]) . ' đ' ?></strong></span>
+        <p><span class="mr-1"><strong><?= number_format($data["productItem"]["discount"]) . ' đ' ?></strong></span>
           <span style="margin-left:12px; text-decoration: line-through;" class="mr-1">
             <?php
-            if ($data["productItem"]["discount"] != 0) echo number_format($data["productItem"]["discount"]) . ' đ';
+            if ($data["productItem"]["discount"] != 0) echo number_format($data["productItem"]["price"]) . ' đ';
             ?>
           </span>
         </p>
@@ -99,27 +99,30 @@
   <h3 style="color:red; margin-top:10px">Các sản phẩm cùng danh mục</h3>
   <div class="showproduct mt-3">
     <?php
+    echo '<div class="container">';
+    echo '<div class="row">';
     for ($i = 0; $i < 4; $i++) {
+      echo '<div class="col-sm">';
       echo    '<div class="card">';
       echo        '<a href="http://localhost/BKPhone/Home/productDetail/' . $data["allProductCategory"][$i]["id"] . '">
-                        <img class="card-img-top mt-2"
+                        <img class="card-img-top"
                             src="' . $data["allProductCategory"][$i]["thumbnail"] . '"
                             alt="Card image cap">
                     </a>';
       echo        '<div class="card-body">';
       echo            '<a id="taga" href="http://localhost/BKPhone/Home/productDetail/' . $data["allProductCategory"][$i]["id"] . '"><h5 class="card-title">' . $data["allProductCategory"][$i]["title"] . '</h5></a>
                         <hr />';
-      echo            '<span class="card-text">' . number_format($data["allProductCategory"][$i]["price"]) . 'đ</span>';
+      echo            '<span class="card-text">' . number_format($data["allProductCategory"][$i]["discount"]) . 'đ</span>';
       echo            '<span style="margin-left:12px; text-decoration: line-through;" class="card-text">';
-      if ($data["allProductCategory"][$i]["discount"] != 0) echo number_format($data["allProductCategory"][$i]["discount"]) . 'đ';
+      if ($data["allProductCategory"][$i]["discount"] != 0) echo number_format($data["allProductCategory"][$i]["price"]) . 'đ';
       echo '</span>';
       echo        '</div>';
-      echo        '<button type="button" class="btnOrder btn btn-danger" onclick="addToCard(' . $data["allProductCategory"][$i]["id"] . ')">Đặt hàng</button>';
-      echo    '</div>';
+      echo        '<button type="button" class="btnOrder btn btn-warning" onclick="addToCard(' . $data["allProductCategory"][$i]["id"] . ')">Đặt hàng</button>';
+      echo    '</div></div>';
     }
+    echo '</div></div>';
     ?>
-    <p id="user_id"><?php if (isset($user["id"])) echo $user["id"];
-                    else echo '123'; ?></p>
+    <p id="user_id"><?php if (isset($user["id"])) echo $user["id"]; ?></p>
   </div>
 </div>
 <script type="text/javascript">

@@ -7,12 +7,12 @@
 </nav>
 <!-- End Breadcrumb -->
 
-<div id="wrapper">
+<div class="product-list-wrapper">
     <p style="font-weight:600">Danh mục sản phẩm</p>
     <button style="margin-bottom: 5px; margin-right: 5px;
         <?php
         if ($data["category_id"] == 0)
-            echo "background-color:red";
+            echo "background-color:rgb(236, 79, 58)";
         ?>
         " type="button" class="btn btn-primary">
         <a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/productList/0">Tất cả</a>
@@ -21,7 +21,7 @@
     $countCategory = count($data["allCategory"]);
     for ($i = 0; $i < $countCategory; $i++) {
         echo   '<button style="margin-bottom: 5px; margin-right: 5px;';
-        if ($data["category_id"] == $data["allCategory"][$i]["id"]) echo "background-color:red";
+        if ($data["category_id"] == $data["allCategory"][$i]["id"]) echo "background-color:rgb(236, 79, 58)";
         echo '" type="button" class="btn btn-primary">
                     <a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/productList/' . $data["allCategory"][$i]["id"] . '">' . $data["allCategory"][$i]["name"] . '</a></button>';
     }
@@ -33,28 +33,28 @@
     <button style="margin-bottom: 5px; margin-right: 5px;
             <?php
             if ($data["fillter"] == 1)
-                echo "background-color:red";
+                echo "background-color:rgb(236, 79, 58)";
             ?>
         " type="button" class="btn btn-primary">
         <a style="color:white;text-decoration:none  " href="http://localhost/BKPhone/Home/productList/<?= $data["category_id"] ?>/1/1">Giá (Cao &gt; Thấp)</a></button>
     <button style="margin-bottom: 5px; margin-right: 5px;
             <?php
             if ($data["fillter"] == 2)
-                echo "background-color:red";
+                echo "background-color:rgb(236, 79, 58)";
             ?>
         " type="button" class="btn btn-primary">
         <a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/productList/<?= $data["category_id"] ?>/1/2">Giá (Thấp &gt; Cao)</a></button>
     <button style="margin-bottom: 5px; margin-right: 5px;
             <?php
             if ($data["fillter"] == 3)
-                echo "background-color:red";
+                echo "background-color:rgb(236, 79, 58)";
             ?>
         " type="button" class="btn btn-primary">
         <a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/productList/<?= $data["category_id"] ?>/1/3">Tên (A &gt; Z)</a></button>
     <button style="margin-bottom: 5px; margin-right: 5px;
             <?php
             if ($data["fillter"] == 4)
-                echo "background-color:red";
+                echo "background-color:rgb(236, 79, 58)";
             ?>
         " type="button" class="btn btn-primary">
         <a style="color:white;text-decoration:none" href="http://localhost/BKPhone/Home/productList/<?= $data["category_id"] ?>/1/4">Tên (Z &gt; A)</a></button>
@@ -72,24 +72,29 @@
     <hr>
     <div class="showproduct">
         <?php
+
+        echo '<div class="container">';
+        echo '<div class="row">';
         for ($i = $data["currentIndex"]; $i < $data["currentIndex"] + 12 && $i < $countProduct; $i++) {
+            echo '<div class="col-sm">';
             echo    '<div style="margin-bottom:10px" class="card">';
             echo        '<a href="http://localhost/BKPhone/Home/productDetail/' . $data["allProductCategory"][$i]["id"] . '">
-                                <img class="card-img-top mt-2"
+                                <img class="card-img-top"
                                     src="' . $data["allProductCategory"][$i]["thumbnail"] . '"
                                     alt="Card image cap">
                             </a>';
             echo        '<div class="card-body">';
             echo            '<a id="taga" href="http://localhost/BKPhone/Home/productDetail/' . $data["allProductCategory"][$i]["id"] . '"><h5 class="card-title">' . $data["allProductCategory"][$i]["title"] . '</h5></a>
                                 <hr />';
-            echo            '<span class="card-text">' . number_format($data["allProductCategory"][$i]["price"]) . 'đ</span>';
+            echo            '<span class="card-text">' . number_format($data["allProductCategory"][$i]["discount"]) . 'đ</span>';
             echo            '<span style="margin-left:12px; text-decoration: line-through;" class="card-text">';
-            if ($data["allProductCategory"][$i]["discount"] != 0) echo number_format($data["allProductCategory"][$i]["discount"]) . 'đ';
+            if ($data["allProductCategory"][$i]["discount"] != 0) echo number_format($data["allProductCategory"][$i]["price"]) . 'đ';
             echo '</span>';
             echo        '</div>';
-            echo        '<button type="button" class="btnOrder btn btn-danger" onclick="addToCard(' . $data["allProductCategory"][$i]["id"] . ')">Đặt hàng</button>';
-            echo    '</div>';
+            echo        '<button type="button" class="btnOrder btn btn-warning" onclick="addToCard(' . $data["allProductCategory"][$i]["id"] . ')">Đặt hàng</button>';
+            echo    '</div></div>';
         }
+        echo '</div></div>';
         ?>
     </div>
     <nav aria-label="Page navigation example">
