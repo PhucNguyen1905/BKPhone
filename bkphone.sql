@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 18, 2022 lúc 06:04 AM
+-- Thời gian đã tạo: Th6 19, 2022 lúc 02:58 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.11
 
@@ -42,8 +42,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (3, 'Xiaomi'),
 (10, 'Nokia'),
 (11, 'Huawei'),
-(12, 'Sony'),
-(109, 'Coconut123');
+(12, 'Sony');
 
 -- --------------------------------------------------------
 
@@ -69,7 +68,8 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`, `user_avatar`) VALUES
 (52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
 (53, 'Sản phẩm tuyệt vời', 50, 1, '2022-06-18 06:02:08', '2022-06-18 06:02:08', 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(54, 'Giá thành cạnh tranh nha', 53, 1, '2022-06-18 06:03:52', '2022-06-18 06:03:52', 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
+(54, 'Giá thành cạnh tranh nha', 53, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
+(55, 'Tôi rất thích', 55, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
 
 -- --------------------------------------------------------
 
@@ -90,6 +90,27 @@ CREATE TABLE `orders` (
   `total_money` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
+(43, 'Phuc Nguyen', 'phuc.user@gmail.com', '0388542487', 53, 1, 0, 'Vĩnh Long', '2022-05-18 10:28:02', 76980000),
+(44, 'Phuc Nguyen', 'ninjavip1st@gmail.com', '0388542487', 53, 1, 0, 'Vĩnh Long', '2022-02-18 11:05:16', 29990000),
+(45, 'Trọng Phúc', 'user1@gmail.com', '0123456789', 50, 2, 0, 'KTX Khu A ĐHQG', '2022-01-18 11:06:51', 55980000),
+(46, 'Phuc Nguyen', 'customer1@gmail.com', '0388542487', 50, 1, 0, 'Vĩnh Long', '2022-04-18 11:07:42', 18500000),
+(47, 'Phuc Nguyen', 'cus@gmail.com', '0906995989', 50, 2, 0, 'Vĩnh Long', '2022-03-18 11:08:16', 39170000),
+(48, 'Phuc Nguyen', 'ninja@gmail.com', '0388542487', 50, 1, 0, 'Vĩnh Long', '2022-07-18 11:08:42', 33990000),
+(49, 'Phuc Nguyen', 'ninjavip1st@gmail.com', '+84388542487', 51, 2, 0, 'Vĩnh Long', '2022-08-18 11:09:58', 12990000),
+(50, 'Phuc Nguyen', 'ninjavip1st@gmail.com', '0906995989', 51, 1, 0, 'Vĩnh Long', '2022-09-18 11:10:18', 50980000),
+(51, 'Trọng Phúc', 'user3@gmail.com', '0906995989', 54, 3, 0, 'Vĩnh Long', '2022-10-18 11:10:57', 61980000),
+(52, 'Phuc Nguyen', 'customer1@gmail.com', '0906995989', 54, 3, 0, 'Vĩnh Long', '2022-11-18 11:12:03', 34990000),
+(53, 'Nguyễn Trọng Phúc', 'ngtrongphuc1905@gmail.com', '0906995989', 54, 1, 0, '268 Lý Thường Kiệt, Quận 10 Tpp. HCM', '2022-12-18 11:12:43', 102970000),
+(54, 'Nguyen Trong Phuc', 'phuc.nguyen1905@hcmut.edu.vn', '0388542487', 54, 0, 0, 'Vĩnh Long', '2022-06-18 11:16:32', 34990000),
+(55, 'Phuc Nguyen', 'ngtrongphuc1905@gmail.com', '0388542487', 54, 0, 0, '268 Ly Thuong Kiet', '2022-06-18 16:31:56', 33990000),
+(56, 'Phuc Nguyen', 'phuc.nguyen1905@hcmut.edu.vn', '0906995989', 54, 4, 0, 'KTX Khu A ĐHQG', '2022-06-18 16:40:44', 34990000),
+(57, 'Demo', 'ninjavip1st@gmail.com', '0388542487', 55, 3, 0, 'Vĩnh Long', '2022-06-19 02:50:41', 68980000);
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +125,35 @@ CREATE TABLE `order_details` (
   `num` int(11) DEFAULT NULL,
   `total_money` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_details`
+--
+
+INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
+(78, 43, 1, 34990000, 1, 34990000),
+(79, 43, 4, 41990000, 1, 41990000),
+(80, 44, 75, 29990000, 1, 29990000),
+(81, 45, 72, 27990000, 2, 55980000),
+(82, 46, 59, 18500000, 1, 18500000),
+(83, 47, 2, 24990000, 1, 24990000),
+(84, 47, 9, 4190000, 1, 4190000),
+(85, 47, 53, 9990000, 1, 9990000),
+(86, 48, 65, 33990000, 1, 33990000),
+(87, 49, 50, 12990000, 1, 12990000),
+(88, 50, 7, 17990000, 1, 17990000),
+(89, 50, 67, 32990000, 1, 32990000),
+(90, 51, 65, 33990000, 1, 33990000),
+(91, 51, 66, 27990000, 1, 27990000),
+(92, 52, 1, 34990000, 1, 34990000),
+(93, 53, 4, 41990000, 1, 41990000),
+(94, 53, 67, 32990000, 1, 32990000),
+(95, 53, 72, 27990000, 1, 27990000),
+(96, 54, 1, 34990000, 1, 34990000),
+(97, 55, 65, 33990000, 1, 33990000),
+(98, 56, 1, 34990000, 1, 34990000),
+(99, 57, 1, 34990000, 1, 34990000),
+(100, 57, 65, 33990000, 1, 33990000);
 
 -- --------------------------------------------------------
 
@@ -122,6 +172,13 @@ CREATE TABLE `payments` (
   `code_bank` varchar(255) NOT NULL COMMENT 'mã ngân hàng',
   `time` datetime NOT NULL COMMENT 'thời gian chuyển khoản'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `payments`
+--
+
+INSERT INTO `payments` (`id`, `order_id`, `user_id`, `money`, `note`, `vnp_response_code`, `code_vnpay`, `code_bank`, `time`) VALUES
+(10, 2147483647, 54, 34990000, 'Tra iphone', '00', '13775938', 'JCB', '2022-06-18 16:00:00');
 
 -- --------------------------------------------------------
 
@@ -179,7 +236,8 @@ INSERT INTO `product` (`id`, `category_id`, `title`, `price`, `discount`, `thumb
 (72, 3, 'Xiaomi 12 Pro (5G)', 27990000, 21590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-12-pro_arenamobiles.jpg', 'Là một trong những dòng smartphone chủ lực của hãng, Xiaomi 12 Pro sở hữu một thiết kế ấn tượng cùng hiệu năng vượt trội mang lại trải nghiệm dùng mượt mà. Bên cạnh đó, máy còn được trang bị hệ thống camera vô cùng chất lượng cho ra những bức ảnh chuyên nghiệp.', '2022-06-18 02:45:50', '2022-06-18 02:45:50', 0),
 (73, 10, 'Nokia G21', 4290000, 3590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/t/h/thumb_602966_default_big.jpg', 'Dù nằm trong phân khúc phổ thông, Nokia G21 sở hữu loạt thông số ấn tượng như camera 50 MP, màn hình lớn sắc nét, vi xử lý tốt cùng pin \"trâu\" giúp cho đây là sản phẩm smartphone dễ tiếp cận và phù hợp cho tất cả người dùng công nghệ.', '2022-06-18 02:46:56', '2022-06-18 02:46:56', 0),
 (74, 10, 'Nokia G50 (5G)', 6590000, 4590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-g50-4_1.jpeg', 'Hãng điện thoại lừng danh Nokia vẫn chưa ngừng cuộc chơi trong thị phần smartphone. Bằng chứng là việc hãng vừa tung ra thị trường sản phẩm mới mang tên Nokia G50 - hỗ trợ mạng 5G với mức giá phổ thông cho tất cả người yêu công nghệ.', '2022-06-18 02:47:51', '2022-06-18 02:47:51', 0),
-(75, 1, 'Samsung Galaxy S20 Ultra', 29990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637170935875912528_ss-s20-ultra-den-1.png', 'Samsung Galaxy S20 Ultra là flagship mới của dòng Galaxy S sẽ được Samsung giới thiệu vào đầu năm 2020. Đây là phiên bản cao cấp nhất bên cạnh phiên bản thường và bản Plus. Điện thoại sẽ được trang bị những tính năng tuyệt vời, dung lượng pin lớn, màn hình được trang bị tần số quét 120Hz, camera chính có độ phân giải 108mp sẽ là những tính năng nổi bật nhất. Để tiết kiệm chi phí nhưng vẫn có thể trải nghiệm các tính năng cao cấp, tham khảo ngay điện thoại Samsung S20 FE đang có mức giá cực hấp dẫn.', '2022-06-18 03:00:14', '2022-06-18 03:00:14', 0);
+(75, 1, 'Samsung Galaxy S20 Ultra', 29990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637170935875912528_ss-s20-ultra-den-1.png', 'Samsung Galaxy S20 Ultra là flagship mới của dòng Galaxy S sẽ được Samsung giới thiệu vào đầu năm 2020. Đây là phiên bản cao cấp nhất bên cạnh phiên bản thường và bản Plus. Điện thoại sẽ được trang bị những tính năng tuyệt vời, dung lượng pin lớn, màn hình được trang bị tần số quét 120Hz, camera chính có độ phân giải 108mp sẽ là những tính năng nổi bật nhất. Để tiết kiệm chi phí nhưng vẫn có thể trải nghiệm các tính năng cao cấp, tham khảo ngay điện thoại Samsung S20 FE đang có mức giá cực hấp dẫn.', '2022-06-18 03:00:14', '2022-06-18 03:00:14', 0),
+(77, 1, 'Samsung Galaxy S21 Plus 5G', 25990000, 16990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/a/samsung-galaxy-s21-plus-1.jpg', 'Có thể nói chiếc Samsung S21 Plus là một trong những chiếc điện thoại đáng được sở hữu nhất trong phân khúc tầm giá hiện tại. Với sự thay đổi thiết kế đột phá đi đầu trong phong cách thiết kế cùng với cấu hình cực kỳ mạnh mẽ của dòng S Plus của Samsung mang đến cho người dùng.', '2022-06-19 00:52:38', '2022-06-19 00:52:38', 0);
 
 -- --------------------------------------------------------
 
@@ -217,7 +275,7 @@ CREATE TABLE `tokens` (
 --
 
 INSERT INTO `tokens` (`user_id`, `token`, `created_at`) VALUES
-(53, '045b2ea3a966d522cf6fcdf84751269d', '2022-06-18 06:03:34');
+(55, 'baaa4887aef2a00bb07412548b02fe36', '2022-06-19 02:49:42');
 
 -- --------------------------------------------------------
 
@@ -243,10 +301,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `deleted`, `avatar`) VALUES
 (46, 'admin', 'admin@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(50, 'Phuc Nguyen', 'user1@gamil.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn1.iconfinder.com/data/icons/people-avatars-23/24/people_avatar_head_spiderman_marvel_spider_man-512.png'),
+(50, 'Phuc Nguyen', 'user1@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn1.iconfinder.com/data/icons/people-avatars-23/24/people_avatar_head_spiderman_marvel_spider_man-512.png'),
 (51, 'Phúc Nguyễn', 'user2@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
 (52, 'Test 123', '123@123.com', '123', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 1, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(53, 'Trọng Phúc', 'phuc.user@gmail.com', '09999999', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
+(53, 'Trọng Phúc', 'phuc.user@gmail.com', '09999999', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
+(54, 'Phúc Nguyễn', 'user3@gmail.com', '0906995989', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
+(55, 'Demo', 'demo@gmail.com', '0906995989', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn-icons-png.flaticon.com/512/1674/1674291.png');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -322,37 +382,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
@@ -364,7 +424,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
