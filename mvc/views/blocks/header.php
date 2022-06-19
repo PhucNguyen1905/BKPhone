@@ -34,6 +34,9 @@ foreach ($cart as $item) {
     <link rel="shortcut icon" type="image/x-icon" href="http://localhost/BKPhone/public/images/favicon.png">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="http://localhost/BKPhone/public/css/style.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     <!-- Modernizr js -->
     <link href="http://localhost/BKPhone/public/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
